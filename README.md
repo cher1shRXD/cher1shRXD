@@ -26,7 +26,7 @@
 </div><br><br>
 <div align="center">
   <h3>Language Usages</h3>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cher1shRXD"><br><br>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cher1shRXD">
 	<img src="https://github-readme-stats.vercel.app/api?username=cher1shRXD&count_private=true&show_icons=true">
 </div>
 
