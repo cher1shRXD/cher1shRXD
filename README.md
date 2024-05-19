@@ -27,7 +27,16 @@
 <div align="center">
   <h3>Language Usages</h3>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cher1shRXD&layout=compact">
-	<img src="https://github-readme-stats.vercel.app/api?username=cher1shRXD&count_private=true&show_icons=true">
+  <img src="https://github-readme-stats.vercel.app/api?username=cher1shRXD&count_private=true&show_icons=true">
+</div>
+<div align="center">
+  <h3>Pinned Repositories</h3>
+  <a href="https://github.com/cher1shRXD/music-app-study">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=music-app-study" />
+  </a>
+  <a href="https://github.com/cher1shRXD/sungonglife">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=sungonglife" />
+  </a>
 </div>
 
 
