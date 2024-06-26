@@ -31,7 +31,7 @@
 </div>
 <div align="center">
   <h3>Pinned Repositories</h3>
-  <a href="https://github.com/cher1shRXD/music-app-study">
+  <a href="https://github.com/cher1shRXD/next-study">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=music-app-study" />
   </a>
   <a href="https://github.com/cher1shRXD/sungonglife">
