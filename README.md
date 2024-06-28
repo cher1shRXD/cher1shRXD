@@ -19,8 +19,8 @@
   <h3>Back-End Skills</h3>
   <img src="https://img.shields.io/badge/php-777BB4?style=for-the-badge&logo=PHP&logoColor=white" />
   <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=MySql&logoColor=white" />
-  <img src="https://img.shields.io/badge/mariadb-003545?style=for-the-badge&logo=MariaDB&logoColor=white" /><br>
-  <img src="https://img.shields.io/badge/apache-D22128?style=for-the-badge&logo=Apache&logoColor=white" />
+  <img src="https://img.shields.io/badge/mariadb-003545?style=for-the-badge&logo=MariaDB&logoColor=white" />
+  <img src="https://img.shields.io/badge/apache-D22128?style=for-the-badge&logo=Apache&logoColor=white" /><br>
   <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=Nginx&logoColor=white" />
   <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white" />
   <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=for-the-badge&logo=PhpMyAdmin&logoColor=white" />
