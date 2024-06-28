@@ -24,7 +24,7 @@
   <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=Nginx&logoColor=white" />
   <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white" />
   <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=for-the-badge&logo=PhpMyAdmin&logoColor=white" />
-  <img src="https://img.shields.io/badge/next.js-#000000?style=flat&logo=Nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
 </div><br><br>
 <div align="center">
   <h3>Language Usages</h3>
