@@ -6,25 +6,25 @@
 </div><br>
 <div align="center">
   <h3>Front-End Skills</h3>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
-  <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white" />
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" /><br>
-  <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=JQuery&logoColor=white" />
-  <img src="https://img.shields.io/badge/typescript-3178C6?style=flat&logo=TypeScript&logoColor=white" />
-  <img src="https://img.shields.io/badge/react-61DAFB?style=flat&logo=React&logoColor=white" />
-  <img src="https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" />
+  <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" /><br>
+  <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=JQuery&logoColor=white" />
+  <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" />
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=React&logoColor=white" />
+  <img src="[https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)" />
 </div>
 <div align="center">
   <h3>Back-End Skills</h3>
-  <img src="https://img.shields.io/badge/php-777BB4?style=flat&logo=PHP&logoColor=white" />
-  <img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=MySql&logoColor=white" />
-  <img src="https://img.shields.io/badge/mariadb-003545?style=flat&logo=MariaDB&logoColor=white" /><br>
-  <img src="https://img.shields.io/badge/apache-D22128?style=flat&logo=Apache&logoColor=white" />
-  <img src="https://img.shields.io/badge/nginx-009639?style=flat&logo=Nginx&logoColor=white" />
-  <img src="https://img.shields.io/badge/linux-FCC624?style=flat&logo=Linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=flat&logo=PhpMyAdmin&logoColor=white" />
-  <img src="https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/php-777BB4?style=for-the-badge&logo=PHP&logoColor=white" />
+  <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=MySql&logoColor=white" />
+  <img src="https://img.shields.io/badge/mariadb-003545?style=for-the-badge&logo=MariaDB&logoColor=white" /><br>
+  <img src="https://img.shields.io/badge/apache-D22128?style=for-the-badge&logo=Apache&logoColor=white" />
+  <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=Nginx&logoColor=white" />
+  <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=for-the-badge&logo=PhpMyAdmin&logoColor=white" />
+  <img src="[https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)" />
 </div><br><br>
 <div align="center">
   <h3>Language Usages</h3>
