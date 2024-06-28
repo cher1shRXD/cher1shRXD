@@ -8,10 +8,10 @@
   <h3>Front-End Skills</h3>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" />
-  <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" /><br>
+  <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" /><br>
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" />
   <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=JQuery&logoColor=white" />
-  <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" />
+  <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" /><br>
   <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=React&logoColor=white" />
   <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge" />
@@ -24,8 +24,10 @@
   <img src="https://img.shields.io/badge/apache-D22128?style=for-the-badge&logo=Apache&logoColor=white" /><br>
   <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=Nginx&logoColor=white" />
   <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=for-the-badge&logo=PhpMyAdmin&logoColor=white" />
+  <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=for-the-badge&logo=PhpMyAdmin&logoColor=white" /><br>
   <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" />
 </div><br><br>
 <div align="center">
   <h3>Language Usages</h3>
