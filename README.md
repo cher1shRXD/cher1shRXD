@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=JQuery&logoColor=white" />
   <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" />
   <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=React&logoColor=white" />
-  <img src="[https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)" />
+  <img src="https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white" />
 </div>
 <div align="center">
   <h3>Back-End Skills</h3>
@@ -24,7 +24,7 @@
   <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=Nginx&logoColor=white" />
   <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white" />
   <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=for-the-badge&logo=PhpMyAdmin&logoColor=white" />
-  <img src="[https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white" />
 </div><br><br>
 <div align="center">
   <h3>Language Usages</h3>
