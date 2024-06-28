@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=JQuery&logoColor=white" />
   <img src="https://img.shields.io/badge/typescript-3178C6?style=flat&logo=TypeScript&logoColor=white" />
   <img src="https://img.shields.io/badge/react-61DAFB?style=flat&logo=React&logoColor=white" />
-  <img src="https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white" />
 </div>
 <div align="center">
   <h3>Back-End Skills</h3>
@@ -24,7 +24,7 @@
   <img src="https://img.shields.io/badge/nginx-009639?style=flat&logo=Nginx&logoColor=white" />
   <img src="https://img.shields.io/badge/linux-FCC624?style=flat&logo=Linux&logoColor=white" />
   <img src="https://img.shields.io/badge/phpmyadmin-6C78AF?style=flat&logo=PhpMyAdmin&logoColor=white" />
-  <img src="https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/nextdotjs-#000000?style=flat&logo=Nextdotjs&logoColor=white" />
 </div><br><br>
 <div align="center">
   <h3>Language Usages</h3>
