@@ -38,11 +38,11 @@
 </div>
 <div align="center">
   <h3>Pinned Repositories</h3>
-  <a href="[https://github.com/cher1shRXD/next-study](https://github.com/cher1shRXD/next-study)">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=next-study" />
+  <a href="[https://github.com/cher1shRXD/daesonamu-server](https://github.com/cher1shRXD/daesonamu-server)">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=daesonamu-server" />
   </a>
-  <a href="https://github.com/cher1shRXD/sungonglife">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=sungonglife" />
+  <a href="https://github.com/cher1shRXD/daesonamu-web">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=daesonamu-web" />
   </a>
 </div>
 
