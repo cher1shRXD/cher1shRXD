@@ -46,11 +46,11 @@
 </div>
 <div align="center">
   <h3>Pinned Repositories</h3>
-  <a href="[https://github.com/cher1shRXD/daesonamu-server](https://github.com/cher1shRXD/daesonamu-server)">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=daesonamu-server" />
+  <a href="[https://github.com/team-whattodo/whattodo-server](https://github.com/team-whattodo/whattodo-server)">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=team-whattodo&repo=whattodo-server" />
   </a>
-  <a href="https://github.com/cher1shRXD/daesonamu-web">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cher1shRXD&repo=daesonamu-web" />
+  <a href="https://github.com/team-whattodo/whattodo-web">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=team-whattodo&repo=whattodo-web" />
   </a>
 </div>
 
