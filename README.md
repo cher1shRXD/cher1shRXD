@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+%F0%9F%9A%80;Building+Amazing+Web+Experiences+%E2%9C%A8;Always+Learning+New+Technologies+%F0%9F%93%9A" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Frontend+Developer+%F0%9F%9A%80;Building+Amazing+Web+Experiences+%E2%9C%A8;Always+Learning+New+Technologies+%F0%9F%93%9A" alt="Typing SVG" />
 </div>
 
 ---
@@ -135,10 +135,6 @@
         <a href="#"><img src="https://skillicons.dev/icons?i=redis" width="48" height="48" alt="Redis" /></a>
         <br>Redis
       </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mariadb/mariadb.png" width="48" height="48" alt="MariaDB" /></a>
-        <br>MariaDB
-      </td>
     </tr>
     <tr>
       <td align="center" width="96">
@@ -146,30 +142,12 @@
         <br>Docker
       </td>
       <td align="center" width="96">
-        <a href="#"><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker-compose/docker-compose.png" width="48" height="48" alt="Docker Compose" /></a>
-        <br>Docker Compose
-      </td>
-      <td align="center" width="96">
         <a href="#"><img src="https://skillicons.dev/icons?i=nginx" width="48" height="48" alt="Nginx" /></a>
         <br>Nginx
       </td>
       <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=apache" width="48" height="48" alt="Apache" /></a>
-        <br>Apache
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="96">
         <a href="#"><img src="https://skillicons.dev/icons?i=linux" width="48" height="48" alt="Linux" /></a>
         <br>Linux
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/phpmyadmin/phpmyadmin.png" width="48" height="48" alt="phpMyAdmin" /></a>
-        <br>phpMyAdmin
-      </td>
-      <td align="center" width="96">
-      </td>
-      <td align="center" width="96">
       </td>
     </tr>
   </table>
