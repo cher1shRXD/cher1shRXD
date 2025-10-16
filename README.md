@@ -215,7 +215,7 @@ const cher1shRXD = {
 ## 🤝 **Let's Connect!**
 
 <div align="center">
- <p>Mail: <a href="mailto:tw080401@naver.com">tw080401@gmail.com</a></p>
+ <p>Mail: <a href="mailto:tw080401@naver.com">tw080401@naver.com</a></p>
 </div>
 
 ---
