@@ -2,6 +2,7 @@
 
 import { useTheme } from "./useTheme";
 import { toggleTheme } from "./dom";
+import { Moon, Sun } from "lucide-react";
 
 export const ThemeToggle = () => {
   const theme = useTheme();
@@ -11,10 +12,10 @@ export const ThemeToggle = () => {
     <button
       type="button"
       onClick={toggleTheme}
-      className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-text shadow-sm hover:border-primary"
+      className="inline-flex items-center gap-2 bg-surface px-4 py-2 text-sm font-medium text-text cursor-pointer rounded-full"
       aria-label={isDark ? "라이트 모드로 전환" : "다크 모드로 전환"}
     >
-      <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+      {isDark ? <Moon size={14} /> : <Sun size={14} />}
       {isDark ? "Dark" : "Light"}
     </button>
   );

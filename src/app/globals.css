@@ -1,134 +1,55 @@
 @import "tailwindcss";
 @import "./theme.css";
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 100;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-Thin.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 200;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-ExtraLight.woff")
-    format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 300;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 400;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 500;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-SemiBold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 700;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-Bold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 800;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-ExtraBold.woff")
-    format("woff");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 900;
-  font-display: swap;
-  src: url("../shared/fonts/pretendard/Pretendard-Black.woff") format("woff");
-}
+@import "./font.css";
 
 * {
   font-family: "Pretendard", sans-serif;
+  user-select: none;  
 }
 
-/* Fade in up animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.font-playpen {
+  font-family: "PlaypenSans", sans-serif;
+}
+
+.font-mulmaru {
+  font-family: "Mulmaru", sans-serif;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.5s ease-out forwards;
-}
-
-.animation-delay-100 { animation-delay: 0.1s; }
-.animation-delay-200 { animation-delay: 0.2s; }
-.animation-delay-300 { animation-delay: 0.3s; }
-.animation-delay-400 { animation-delay: 0.4s; }
-.animation-delay-500 { animation-delay: 0.5s; }
-
-/* Stagger children animation */
-.stagger-children > * {
+.delayed-show {
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+.animation-delay-200 {
+  animation-delay: 0.2s;
 }
 
-.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
-.stagger-children > *:nth-child(2) { animation-delay: 0.15s; }
-.stagger-children > *:nth-child(3) { animation-delay: 0.2s; }
-.stagger-children > *:nth-child(4) { animation-delay: 0.25s; }
-.stagger-children > *:nth-child(5) { animation-delay: 0.3s; }
-.stagger-children > *:nth-child(6) { animation-delay: 0.35s; }
-.stagger-children > *:nth-child(7) { animation-delay: 0.4s; }
-.stagger-children > *:nth-child(8) { animation-delay: 0.45s; }
-.stagger-children > *:nth-child(9) { animation-delay: 0.5s; }
-.stagger-children > *:nth-child(10) { animation-delay: 0.55s; }
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
