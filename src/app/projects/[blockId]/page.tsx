@@ -4,7 +4,6 @@ import ArticleHeader from "@/widgets/article/ui/ArticleHeader";
 import ArticleContent from "@/widgets/article/ui/ArticleContent";
 import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import ArticleNavigation from "@/widgets/article/ui/ArticleNavigation";
-import Reveal from "@/shared/ui/Reveal";
 import { Metadata } from "next";
 
 export const revalidate = 86400;
@@ -126,13 +125,9 @@ export default async function ArticlePage({
     <main className="min-h-screen pb-20">
       <ArticleHeader project={properties} />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative">
-        <Reveal threshold={0} triggerOnce>
-          <article>
-            <ArticleContent blocks={blocks} />
-          </article>
-        </Reveal>
-      </div>
+      <article className="max-w-4xl mx-auto px-4 sm:px-6">
+        <ArticleContent blocks={blocks} />
+      </article>
 
       <ArticleNavigation
         prevProject={prevProject || undefined}

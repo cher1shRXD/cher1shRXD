@@ -4,7 +4,6 @@ import BlogHeader from "@/widgets/blog/ui/BlogHeader";
 import ArticleContent from "@/widgets/article/ui/ArticleContent";
 import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import BlogNavigation from "@/widgets/blog/ui/BlogNavigation";
-import Reveal from "@/shared/ui/Reveal";
 import { Metadata } from "next";
 
 export const revalidate = 86400;
@@ -119,16 +118,12 @@ export default async function BlogPostPage({
   const { prevPost, nextPost } = await getAdjacentPosts(blockId);
 
   return (
-    <main className="min-h-screen pb-20 px-4 sm:px-6">
+    <main className="min-h-screen pb-20">
       <BlogHeader post={properties} />
 
-      <div className="w-full max-w-4xl mx-auto">
-        <Reveal threshold={0} triggerOnce>
-          <article>
-            <ArticleContent blocks={blocks} />
-          </article>
-        </Reveal>
-      </div>
+      <article className="w-full max-w-4xl mx-auto px-4 sm:px-6">
+        <ArticleContent blocks={blocks} />
+      </article>
 
       <BlogNavigation
         prevPost={prevPost || undefined}
