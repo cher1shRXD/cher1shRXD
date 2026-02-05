@@ -22,4 +22,5 @@ export interface Project {
   name: Name;
   deployed_url: Url | null;
   description: RichText;
+  thumbnail: Url | null;
 }

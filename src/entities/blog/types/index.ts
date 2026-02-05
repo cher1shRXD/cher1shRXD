@@ -16,4 +16,5 @@ export interface BlogPost {
   tags: MultiSelect;
   slug: Number;
   name: Name;
+  thumbnail: Url | null;
 }
