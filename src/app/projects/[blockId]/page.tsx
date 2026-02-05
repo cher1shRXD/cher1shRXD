@@ -8,6 +8,13 @@ import Reveal from "@/shared/ui/Reveal";
 
 export const revalidate = 86400;
 
+export const generateStaticParams = async () => {
+  const projects = await ProjectApi.getProjects();
+  return projects.map((project) => ({
+    blockId: project.id,
+  }));
+}
+
 const getArticleData = async (blockId: string) => {
   try {
     return await ProjectApi.getProjectById(blockId);
@@ -72,7 +79,7 @@ export default async function ArticlePage({
       <ArticleHeader project={properties} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative">
-        <Reveal threshold={0.2} triggerOnce>
+        <Reveal threshold={0} triggerOnce>
           <article>
             <ArticleContent blocks={blocks} />
           </article>

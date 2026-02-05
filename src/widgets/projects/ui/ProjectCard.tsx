@@ -21,7 +21,7 @@ const ProjectCard = ({ project, projectId, delay = 0 }: Props) => {
   };
 
   return (
-    <Reveal delay={delay} triggerOnce>
+    <Reveal delay={delay} triggerOnce threshold={0.1}>
       <div 
         onClick={handleCardClick}
         className="group relative bg-surface border border-border sm:border-2 rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden hover:border-primary transition-all duration-300 cursor-pointer">
