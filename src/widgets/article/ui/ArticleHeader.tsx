@@ -39,7 +39,7 @@ const ArticleHeader = ({ project }: Props) => {
                 alt={project.name.title[0]?.plain_text || "Project logo"}
                 fill
                 className="object-contain p-2"
-                priority
+                unoptimized
               />
             </div>
           )}
