@@ -6,7 +6,7 @@ import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import ArticleNavigation from "@/widgets/article/ui/ArticleNavigation";
 import Reveal from "@/shared/ui/Reveal";
 
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
 const getArticleData = async (blockId: string) => {
   try {

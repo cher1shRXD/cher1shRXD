@@ -11,7 +11,7 @@ import ValuesQuote from "@/widgets/values-quote/ui/ValuesQuote";
 import ProfileSection from "@/widgets/profile/ui/ProfileSection";
 import OverviewSection from "@/widgets/overview/ui/OverviewSection";
 
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
 export default async function HomePage() {
   const [techStacks, awards, educations, licenses, personalInfo] =

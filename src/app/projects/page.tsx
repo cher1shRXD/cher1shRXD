@@ -1,8 +1,8 @@
-export const revalidate = 60 * 60 * 24;
-
 import { ProjectApi } from "@/entities/project/api";
 import Reveal from "@/shared/ui/Reveal";
 import ProjectsGrid from "@/widgets/projects/ui/ProjectsGrid";
+
+export const revalidate = 86400;
 
 export default async function ProjectsPage() {
   const projects = await ProjectApi.getProjects();
