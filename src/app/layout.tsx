@@ -23,6 +23,12 @@ export default function RootLayout({
       <head>
         <ThemeSetter />
         <meta name="google-adsense-account" content="ca-pub-6661151683803615" />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6661151683803615"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="antialiased bg-background text-text pt-20 md:pt-40">
         <Script
@@ -35,12 +41,6 @@ export default function RootLayout({
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-TLSWZB7P');`,
           }}
-        />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6661151683803615"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         <noscript>
           <iframe
