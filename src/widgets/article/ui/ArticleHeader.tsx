@@ -91,7 +91,7 @@ const ArticleHeader = ({ project }: Props) => {
                   key={tech.id}
                   className="px-3 py-1 text-sm font-medium text-text bg-transparent border border-text rounded-full"
                 >
-                  {tech.name}
+                  {tech.name.trim()}
                 </span>
               ))}
             </div>
