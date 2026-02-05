@@ -205,7 +205,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
       return (
         <h1
           id={block.id}
-          className={`text-xl md:text-3xl lg:text-4xl font-bold text-text mt-14 mb-4 pt-4 scroll-mt-24 tracking-wide uppercase ${colorMap[block.heading_1.color] || ""} border-b border-border pb-4`}>
+          className={`text-xl md:text-3xl lg:text-4xl font-bold text-text mt-14 mb-4 pt-4 scroll-mt-24 tracking-wide uppercase ${colorMap[block.heading_1.color] || ""} border-b border-border pb-1 md:pb-2`}>
           <RichText richText={block.heading_1.rich_text} />
         </h1>
       );

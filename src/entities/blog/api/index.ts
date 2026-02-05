@@ -10,7 +10,7 @@ export type NotionBlockWithChildren = BlockObjectResponse & {
 export const BlogApi = {
   id: process.env.BLOG_DB_ID!,
 
-  async getPosts() {
+  async getPosts(size?: number) {
     const res = await notion.dataSources.query({
       data_source_id: this.id,
       filter: {
@@ -25,6 +25,7 @@ export const BlogApi = {
           direction: "descending",
         },
       ],
+      page_size: size,
     });
 
     return res.results as ResultResponse<BlogPost>[];

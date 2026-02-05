@@ -5,7 +5,6 @@ import { ThemeSetter } from "@/shared/themes/ThemeSetter";
 import Header from "@/widgets/header/ui/Header";
 import Footer from "@/widgets/footer/ui/Footer";
 import LenisProvider from "@/shared/providers/LenisProvider";
-import InitScrollProvider from "@/shared/providers/InitScrollProvider";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -15,8 +14,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
@@ -51,8 +52,8 @@ export default function RootLayout({
           />
         </noscript>
         <LoadingBar color="var(--theme-color-primary)" />
-        <InitScrollProvider />
         <Header />
+        {modal}
         <LenisProvider>
           <main>{children}</main>
           <Footer />

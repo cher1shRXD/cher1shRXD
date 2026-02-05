@@ -1,3 +1,5 @@
+"use client";
+
 import { Project } from "@/entities/project/types";
 import { formatDate } from "@/shared/utils/format-date";
 import Reveal from "@/shared/ui/Reveal";

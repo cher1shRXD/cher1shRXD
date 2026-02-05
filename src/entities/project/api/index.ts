@@ -10,7 +10,7 @@ export type NotionBlockWithChildren = BlockObjectResponse & {
 export const ProjectApi = {
   id: process.env.PROJECT_DB_ID!,
 
-  async getProjects() {
+  async getProjects(size?: number) {
     const res = await notion.dataSources.query({
       data_source_id: this.id,
       filter: {
@@ -25,6 +25,7 @@ export const ProjectApi = {
           direction: "descending",
         },
       ],
+      page_size: size,
     });
 
     return res.results as ResultResponse<Project>[];
