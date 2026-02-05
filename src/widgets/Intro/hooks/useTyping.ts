@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export const useTyping = (
   text: string,
-  speed: number = 100,
-  pauseTime: number = 2000,
+  speed: number,
+  pauseTime: number,
 ) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 1,
+  });
 
   useEffect(() => {
+    if (!inView) return;
+
     if (!isDeleting && currentIndex < text.length) {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + text[currentIndex]);
@@ -37,7 +43,7 @@ export const useTyping = (
 
       return () => clearTimeout(id);
     }
-  }, [currentIndex, displayedText, text, speed, pauseTime, isDeleting]);
+  }, [currentIndex, displayedText, text, speed, pauseTime, isDeleting, inView]);
 
-  return displayedText;
+  return { displayedText, ref };
 };

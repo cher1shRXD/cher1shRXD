@@ -3,6 +3,7 @@ import "./globals.css";
 import { LoadingBar } from "@cher1shrxd/loading";
 import { ThemeSetter } from "@/shared/themes/ThemeSetter";
 import Header from "@/widgets/header/ui/Header";
+import LenisProvider from "@/shared/providers/LenisProvider";
 
 export const metadata: Metadata = {
   title: "cher1shRXD's Portfolio",
@@ -19,10 +20,12 @@ export default function RootLayout({
       <head>
         <ThemeSetter />
       </head>
-      <body className="antialiased bg-background text-text transition-colors pt-40">
+      <body className="antialiased bg-background text-text pt-40">
         <LoadingBar color="var(--theme-color-primary)" />
         <Header />
-        <main>{children}</main>
+        <LenisProvider>
+          <main>{children}</main>
+        </LenisProvider>
       </body>
     </html>
   );

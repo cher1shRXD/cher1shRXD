@@ -15,7 +15,7 @@ export const useScroll = () => {
         setIsTop(false);
       }
 
-      if (currentScrollY > lastScrollY && currentScrollY > 10) {
+      if (currentScrollY > lastScrollY && currentScrollY > 30) {
         setIsVisible(false);
       } else {
         setIsVisible(true);

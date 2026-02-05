@@ -21,9 +21,9 @@ const Header = () => {
     <div
       className={`w-full fixed top-0 z-50 ${isMenuOpened ? "backdrop-blur-lg" : "backdrop-blur-none"} transition-all duration-300`}>
       <header
-        className={`w-full ${isMenuOpened ? "bg-primary/80" : "bg-background"} flex flex-col items-center justify-start ${shouldShow ? "translate-y-0" : "-translate-y-full"} transition-all`}>
+        className={`w-full ${isMenuOpened ? "bg-primary/80" : "bg-background"} flex flex-col items-center justify-start ${shouldShow ? "translate-y-0" : "-translate-y-full"} transition-transform duration-700`}>
         <div
-          className={`${(isTop || isMenuOpened) ? "border-0" : "border-b border-border"} w-full max-w-440 h-40 flex items-center justify-start px-2 gap-4`}>
+          className={`${isTop || isMenuOpened ? "border-0" : "border-b border-border"} w-full max-w-440 h-40 flex items-center justify-start px-2 gap-4`}>
           <Hamburger
             isMenuOpened={isMenuOpened}
             setIsMenuOpened={setIsMenuOpened}
