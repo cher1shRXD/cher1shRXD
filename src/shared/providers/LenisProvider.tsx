@@ -6,7 +6,7 @@ import Lenis from "lenis";
 export default function LenisProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.5,
+      duration: 1,
       smoothWheel: true,
       easing: (t) => 1 - Math.pow(1 - t, 3),
     });

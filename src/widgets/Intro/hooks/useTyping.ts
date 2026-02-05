@@ -10,7 +10,7 @@ export const useTyping = (
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const { ref, inView } = useInView({
-    threshold: 1,
+    threshold: 0.7,
   });
 
   useEffect(() => {
