@@ -12,6 +12,10 @@ interface Props {
 }
 
 const BlogHeader = ({ post }: Props) => {
+  const image = post.thumbnail?.files[0]?.file?.url ||
+    post.thumbnail?.files[0]?.external?.url ||
+    null;
+
   return (
     <header className="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
       <Reveal triggerOnce>
@@ -39,11 +43,11 @@ const BlogHeader = ({ post }: Props) => {
         </div>
       </Reveal>
 
-      {post.thumbnail?.url && (
+      {image && (
         <Reveal delay={0.3} triggerOnce>
           <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border bg-surface mb-8">
             <Image
-              src={post.thumbnail.url}
+              src={image}
               alt={post.name.title[0]?.plain_text || "Blog post cover"}
               fill
               className="object-cover"
