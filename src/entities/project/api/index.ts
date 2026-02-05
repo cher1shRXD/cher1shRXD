@@ -53,7 +53,6 @@ export const ProjectApi = {
       cursor = res.next_cursor ?? undefined;
     }
 
-    // Fetch children for blocks that have them
     for (const block of blocks) {
       if (block.has_children) {
         const childBlocks = await this.getBlockChildren(block.id);

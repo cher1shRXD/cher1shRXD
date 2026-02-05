@@ -6,6 +6,7 @@ import {
   Name,
   MultiSelect,
   Number,
+  File,
 } from "@/shared/types/fields";
 
 export interface BlogPost {
@@ -16,5 +17,5 @@ export interface BlogPost {
   tags: MultiSelect;
   slug: Number;
   name: Name;
-  thumbnail: Url | null;
+  thumbnail: File | null;
 }

@@ -8,6 +8,7 @@ import {
   Date,
   Number,
   RichText,
+  File,
 } from "@/shared/types/fields";
 
 export interface Project {
@@ -22,7 +23,7 @@ export interface Project {
   name: Name;
   deployed_url: Url | null;
   description: RichText;
-  thumbnail: Url | null;
+  thumbnail: File| null;
   teammates: Number;
   team_structure: RichText;
 }

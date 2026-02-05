@@ -20,18 +20,24 @@ const ProjectCard = ({ project, projectId, delay = 0 }: Props) => {
     router.push(`/projects/${projectId}`);
   };
 
+  const image =
+    project.thumbnail?.files[0]?.file?.url ||
+    project.thumbnail?.files[0]?.external?.url ||
+    null;
+
   return (
     <Reveal delay={delay} triggerOnce threshold={0.1}>
-      <div 
+      <div
         onClick={handleCardClick}
-        className="group relative bg-surface border border-border sm:border-2 rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden hover:border-primary transition-all duration-300 cursor-pointer">
-        {project.thumbnail && project.thumbnail.url && (
+        className="group relative bg-surface rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden transition-all duration-300 cursor-pointer">
+        {project.thumbnail && image && (
           <div className="relative w-full h-40 sm:h-48 md:h-52 lg:h-56 xl:h-60 overflow-hidden bg-surface/50">
             <Image
-              src={project.thumbnail.url}
+              src={image}
               alt={project.name.title[0].plain_text}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              unoptimized
+              className="object-contain group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         )}

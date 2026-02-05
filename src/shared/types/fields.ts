@@ -56,8 +56,11 @@ export interface MultiSelect {
 
 export interface File {
   files: {
-    file: {
+    file?: {
       expiry_time: string;
+      url: string;
+    };
+    external?: {
       url: string;
     };
     name: string;
