@@ -25,7 +25,11 @@ const ProjectsGrid = ({ projects }: Props) => {
       columnClassName="pl-4 sm:pl-5 md:pl-6 lg:pl-7 xl:pl-8 bg-clip-padding">
       {projects.map((project, index) => (
         <div key={project.id} className="mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
-          <ProjectCard project={project.properties} delay={0.6 + index * 0.1} />
+          <ProjectCard 
+            project={project.properties} 
+            projectId={project.id}
+            delay={0.6 + index * 0.1} 
+          />
         </div>
       ))}
     </Masonry>

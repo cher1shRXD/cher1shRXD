@@ -5,16 +5,26 @@ import Link from "next/link";
 import Image from "next/image";
 import { Globe } from "lucide-react";
 import Github from "@/shared/icons/Github";
+import { useRouter } from "@cher1shrxd/loading";
 
 interface Props {
   project: Project;
+  projectId: string;
   delay?: number;
 }
 
-const ProjectCard = ({ project, delay = 0 }: Props) => {
+const ProjectCard = ({ project, projectId, delay = 0 }: Props) => {
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    router.push(`/projects/${projectId}`);
+  };
+
   return (
     <Reveal delay={delay} triggerOnce>
-      <div className="group relative bg-surface border border-border sm:border-2 rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden hover:border-primary transition-all duration-300 cursor-pointer">
+      <div 
+        onClick={handleCardClick}
+        className="group relative bg-surface border border-border sm:border-2 rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden hover:border-primary transition-all duration-300 cursor-pointer">
         {project.thumbnail && project.thumbnail.url && (
           <div className="relative w-full h-40 sm:h-48 md:h-52 lg:h-56 xl:h-60 overflow-hidden bg-surface/50">
             <Image
@@ -68,6 +78,7 @@ const ProjectCard = ({ project, delay = 0 }: Props) => {
               <Link
                 href={project.github_repo.url}
                 target="_blank"
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-base text-text/70 hover:text-primary transition-colors">
                 <Github className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" />
                 <span>GitHub</span>
@@ -77,6 +88,7 @@ const ProjectCard = ({ project, delay = 0 }: Props) => {
               <Link
                 href={project.deployed_url.url}
                 target="_blank"
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-base text-text/70 hover:text-primary transition-colors">
                 <Globe className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" />
                 <span>Go to Service</span>

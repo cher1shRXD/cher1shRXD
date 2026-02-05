@@ -1,6 +1,11 @@
 import { notion } from "@/shared/libs/notion";
 import { ResultResponse } from "@/shared/types/result-response";
 import { Project } from "../types";
+import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+
+export type NotionBlockWithChildren = BlockObjectResponse & {
+  children?: NotionBlockWithChildren[];
+};
 
 export const ProjectApi = {
   id: process.env.PROJECT_DB_ID!,
@@ -26,7 +31,10 @@ export const ProjectApi = {
   },
 
   async getProjectById(blockId: ResultResponse<Project>["id"]) {
-    const blocks = [];
+    const page = await notion.pages.retrieve({ page_id: blockId });
+    const properties = (page as ResultResponse<Project>).properties;
+
+    const blocks: NotionBlockWithChildren[] = [];
     let cursor: string | undefined;
 
     while (true) {
@@ -35,10 +43,51 @@ export const ProjectApi = {
         start_cursor: cursor,
       });
 
-      blocks.push(...res.results);
+      const fullBlocks = res.results.filter(
+        (block): block is BlockObjectResponse => "type" in block
+      );
+
+      blocks.push(...fullBlocks);
 
       if (!res.has_more) break;
       cursor = res.next_cursor ?? undefined;
+    }
+
+    // Fetch children for blocks that have them
+    for (const block of blocks) {
+      if (block.has_children) {
+        const childBlocks = await this.getBlockChildren(block.id);
+        block.children = childBlocks;
+      }
+    }
+
+    return { properties, blocks };
+  },
+
+  async getBlockChildren(blockId: string): Promise<NotionBlockWithChildren[]> {
+    const blocks: NotionBlockWithChildren[] = [];
+    let cursor: string | undefined;
+
+    while (true) {
+      const res = await notion.blocks.children.list({
+        block_id: blockId,
+        start_cursor: cursor,
+      });
+
+      const fullBlocks = res.results.filter(
+        (block): block is BlockObjectResponse => "type" in block
+      );
+
+      blocks.push(...fullBlocks);
+
+      if (!res.has_more) break;
+      cursor = res.next_cursor ?? undefined;
+    }
+
+    for (const block of blocks) {
+      if (block.has_children) {
+        block.children = await this.getBlockChildren(block.id);
+      }
     }
 
     return blocks;
