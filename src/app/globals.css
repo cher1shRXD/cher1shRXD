@@ -29,6 +29,10 @@
   animation-delay: 300ms;
 }
 
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
 
 @keyframes neonFlicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
@@ -53,93 +57,4 @@
     0 0 80px var(--theme-color-primary);
   animation: neonFlicker 5s linear infinite;
   will-change: opacity;
-}
-
-@keyframes cursor-guide {
-  0% {
-    opacity: 0;
-    transform: translateX(0px) translateY(80%);
-  }
-  5% {
-    opacity: 1;
-    transform: translateX(-1px) translateY(79%);
-  }
-  8% {
-    opacity: 1;
-    transform: translateX(-3px) translateY(77.5%);
-  }
-  11% {
-    opacity: 1;
-    transform: translateX(-6px) translateY(75.5%);
-  }
-  14% {
-    opacity: 1;
-    transform: translateX(-10px) translateY(73%);
-  }
-  17% {
-    opacity: 1;
-    transform: translateX(-14px) translateY(71%);
-  }
-  20% {
-    opacity: 1;
-    transform: translateX(-18px) translateY(69%);
-  }
-  23% {
-    opacity: 1;
-    transform: translateX(-22px) translateY(67%);
-  }
-  26% {
-    opacity: 1;
-    transform: translateX(-26px) translateY(65%);
-  }
-  29% {
-    opacity: 1;
-    transform: translateX(-32px) translateY(63%);
-  }
-  32% {
-    opacity: 1;
-    transform: translateX(-38px) translateY(61%);
-  }
-  35% {
-    opacity: 1;
-    transform: translateX(-43px) translateY(59%);
-  }
-  38% {
-    opacity: 1;
-    transform: translateX(-48px) translateY(57%);
-  }
-  41% {
-    opacity: 1;
-    transform: translateX(-52px) translateY(55%);
-  }
-  44% {
-    opacity: 1;
-    transform: translateX(-56px) translateY(53.5%);
-  }
-  47% {
-    opacity: 1;
-    transform: translateX(-59px) translateY(52%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(-62px) translateY(51%);
-  }
-  90% {
-    opacity: 1;
-    transform: translateX(-64px) translateY(50%);
-  }
-  95% {
-    opacity: 1;
-    transform: translateX(-64px) translateY(50%);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-64px) translateY(50%);
-  }
-}
-
-.cursor-guide {
-  animation: cursor-guide 3s linear infinite;
-  animation-delay: 10s;
-  animation-fill-mode: backwards;
 }

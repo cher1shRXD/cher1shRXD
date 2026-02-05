@@ -4,14 +4,14 @@ import Cursor from "@/shared/icons/Cursor";
 
 const HeroSlogans = () => {
   return (
-    <section className="w-full max-w-440 py-32 mx-auto px-4 flex flex-col gap-18">
+    <section className="w-full max-w-440 lg:py-32 md:py-16 py-8 mx-auto px-4 flex flex-col lg:gap-18 md:gap-12 sm:gap-8 gap-6">
       {SLOGANS.map((slogan) => (
         <Reveal
           className={slogan.className}
           delay={slogan.delay}
           key={slogan.key}
           triggerOnce>
-          <h1 className="text-7xl relative hover:[&>div]:opacity-100">
+          <h1 className="lg:text-7xl md:text-5xl sm:text-3xl text-2xl relative hover:[&>div]:opacity-100">
             {slogan.emoji && !slogan.emojiPosition && (
               <span className="animate-bounce inline-block">
                 {slogan.emoji}
@@ -24,7 +24,7 @@ const HeroSlogans = () => {
               </span>
             )}
             {slogan.pointer && (
-              <span className="absolute top-1/2 -right-20 -translate-x-[80%] text-4xl cursor-guide">
+              <span className="absolute top-[90%] right-10 -rotate-25 text-4xl animate-bounce animation-delay-500 hidden xl:block">
                 <Cursor />
               </span>
             )}

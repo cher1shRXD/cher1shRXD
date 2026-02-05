@@ -7,23 +7,35 @@ interface Props {
 
 const ProfileTable = ({ personalInfo }: Props) => {
   return (
-    <table className="border-collapse border border-border overflow-hidden rounded-xl bg-surface w-auto">
+    <table className="border-collapse border border-border overflow-hidden rounded-lg md:rounded-xl bg-surface w-full md:w-auto text-sm md:text-base">
       <tbody>
         <tr className="border border-border">
-          <th className="px-6 py-2 border-r border-border">생년월일</th>
-          <td className="px-6 py-2">{formatDate(personalInfo.birthday)}</td>
+          <th className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2 border-r border-border">
+            <span className="sm:hidden">📅</span>
+            <span className="hidden sm:inline">생년월일</span>
+          </th>
+          <td className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2">{formatDate(personalInfo.birthday)}</td>
         </tr>
         <tr className="border border-border">
-          <th className="px-6 py-2 border-r border-border">주소</th>
-          <td className="px-6 py-2">{personalInfo.address}</td>
+          <th className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2 border-r border-border">
+            <span className="sm:hidden">📍</span>
+            <span className="hidden sm:inline">주소</span>
+          </th>
+          <td className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2 break-keep">{personalInfo.address}</td>
         </tr>
         <tr className="border border-border">
-          <th className="px-6 py-2 border-r border-border">전화번호</th>
-          <td className="px-6 py-2">{personalInfo.phone}</td>
+          <th className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2 border-r border-border">
+            <span className="sm:hidden">📞</span>
+            <span className="hidden sm:inline">전화번호</span>
+          </th>
+          <td className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2">{personalInfo.phone}</td>
         </tr>
         <tr className="border border-border">
-          <th className="px-6 py-2 border-r border-border">이메일</th>
-          <td className="px-6 py-2">{personalInfo.email}</td>
+          <th className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2 border-r border-border">
+            <span className="sm:hidden">📧</span>
+            <span className="hidden sm:inline">이메일</span>
+          </th>
+          <td className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2">{personalInfo.email}</td>
         </tr>
       </tbody>
     </table>

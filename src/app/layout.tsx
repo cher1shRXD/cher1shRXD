@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <ThemeSetter />
       </head>
-      <body className="antialiased bg-background text-text pt-40">
+      <body className="antialiased bg-background text-text pt-20 md:pt-40">
         <LoadingBar color="var(--theme-color-primary)" />
         <Header />
         <LenisProvider>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hamburger from "./Hamburger";
 import FromisNine from "@/shared/icons/FromisNine";
 import Velog from "@/shared/icons/Velog";
@@ -10,10 +10,23 @@ import NavItem from "./NavItem";
 import { ROUTES } from "../constants/routes";
 import { useScroll } from "../hooks/useScroll";
 import { ThemeToggle } from "@/shared/themes/ThemeToggle";
+import Reveal from "@/shared/ui/Reveal";
 
 const Header = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const { isVisible, isTop } = useScroll();
+
+  useEffect(() => {
+    if (isMenuOpened) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpened]);
 
   const shouldShow = isMenuOpened || isVisible;
 
@@ -23,7 +36,7 @@ const Header = () => {
       <header
         className={`w-full ${isMenuOpened ? "bg-primary/80" : "bg-background"} flex flex-col items-center justify-start ${shouldShow ? "translate-y-0" : "-translate-y-full"} transition-transform duration-700`}>
         <div
-          className={`${isTop || isMenuOpened ? "border-0" : "border-b border-border"} w-full max-w-440 h-40 flex items-center justify-start px-2 gap-4`}>
+          className={`${isTop || isMenuOpened ? "border-0" : "border-b border-border"} w-full max-w-440 h-20 md:h-40 flex items-center justify-start px-2 gap-4`}>
           <Hamburger
             isMenuOpened={isMenuOpened}
             setIsMenuOpened={setIsMenuOpened}
@@ -39,17 +52,19 @@ const Header = () => {
           <ThemeToggle />
         </div>
         <div
-          className={`w-full ${isMenuOpened ? "h-[calc(100svh-10rem)]" : "h-0"} transition-all`}>
+          className={`w-full ${isMenuOpened ? "h-[calc(100svh-5rem)] md:h-[calc(100svh-10rem)]" : "h-0"} transition-all`}>
           {isMenuOpened && (
-            <nav className="w-full max-w-440 flex-1 flex flex-col items-start justify-start gap-8 px-2 delayed-show animation-delay-200 mx-auto">
-              {ROUTES.map(({ name, href }) => (
-                <NavItem
-                  key={href}
-                  name={name}
-                  href={href}
-                  onClick={() => setIsMenuOpened(false)}
-                />
-              ))}
+            <nav className="w-full h-full max-w-440  px-2 mx-auto">
+              <Reveal triggerOnce delay={0.3} className="flex flex-col items-start justify-start xl:gap-8 lg:gap-6 md:gap-4 gap-2">
+                {ROUTES.map(({ name, href }) => (
+                  <NavItem
+                    key={href}
+                    name={name}
+                    href={href}
+                    onClick={() => setIsMenuOpened(false)}
+                  />
+                ))}
+              </Reveal>
             </nav>
           )}
         </div>

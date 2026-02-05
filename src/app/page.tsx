@@ -26,7 +26,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSlogans />
-      <section className="w-full h-[200vh] pt-32 pb-16 flex items-start justify-center">
+      <section className="w-full xl:h-[200vh] xl:pt-32 pb-16 flex items-start justify-center">
         <Intro />
       </section>
       <ValuesQuote personalInfo={personalInfo} />
@@ -36,9 +36,9 @@ export default async function HomePage() {
         awards={awards.map((a) => a.properties)}
         educations={educations.map((e) => e.properties)}
       />
-      <section className="w-full max-w-440 mx-auto px-4 flex flex-col gap-16 mb-64">
+      <section className="w-full max-w-440 mx-auto px-4 flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 md:mb-64 mb-16">
         <Reveal>
-          <h1 className="text-6xl font-semibold font-playpen tracking-widest">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold font-playpen tracking-widest">
             TECH STACKS.
           </h1>
         </Reveal>

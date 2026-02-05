@@ -24,8 +24,8 @@ const TechStacks = ({ data }: Props) => {
   const { wrapperRef, activeIndex } = useActiveByScroll(categories);
 
   return (
-    <div ref={wrapperRef} className="relative h-[200vh]">
-      <div className="sticky top-50 flex items-start justify-start gap-8">
+    <div ref={wrapperRef} className="relative sm:h-[120vh] md:h-[150vh] lg:h-[180vh] xl:h-[200vh]">
+      <div className="xl:sticky top-20 sm:top-30 md:top-40 lg:top-45 xl:top-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8">
         {categories.map((category, index) => (
           <CategoryContainer
             key={category}
