@@ -1,4 +1,4 @@
-export const revalidate = 3600;
+export const revalidate = 60 * 60 * 2;
 
 import { ProjectApi } from "@/entities/project/api";
 import Reveal from "@/shared/ui/Reveal";

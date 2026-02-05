@@ -1,4 +1,4 @@
-export const revalidate = 3600;
+export const revalidate = 60 * 60 * 2;
 
 import { AwardApi } from "@/entities/award/api";
 import { EducationApi } from "@/entities/education/api";
