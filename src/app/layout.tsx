@@ -3,6 +3,7 @@ import "./globals.css";
 import { LoadingBar } from "@cher1shrxd/loading";
 import { ThemeSetter } from "@/shared/themes/ThemeSetter";
 import Header from "@/widgets/header/ui/Header";
+import Footer from "@/widgets/footer/ui/Footer";
 import LenisProvider from "@/shared/providers/LenisProvider";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Header />
         <LenisProvider>
           <main>{children}</main>
+          <Footer />
         </LenisProvider>
       </body>
     </html>

@@ -8,7 +8,7 @@ interface Props {
 
 const EducationTimeline = ({ educations }: Props) => {
   return (
-    <Reveal className="w-full lg:sticky lg:top-50">
+    <Reveal className="w-full md:w-auto lg:sticky lg:top-50">
       <div className="w-full flex flex-col items-end gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 mt-0 sm:mt-4 md:mt-6 lg:mt-10 xl:mt-12">
         <h3 className="text-2xl md:text-3xl xl:text-4xl font-semibold">학력</h3>
         <div className="w-full relative flex flex-col gap-12 sm:gap-14 md:gap-16 lg:gap-20 xl:gap-24">
