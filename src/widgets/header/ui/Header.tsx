@@ -43,7 +43,7 @@ const Header = () => {
           />
           <FromisNine size={32} className="text-text cursor-pointer" />
           <div className="flex-1" />
-          <Link href="https://velog.io/@rxd123" target="_blank">
+          <Link href="https://velog.io/@rxd123/posts" target="_blank">
             <Velog size={24} className="text-text cursor-pointer" />
           </Link>
           <Link href="https://github.com/cher1shRXD" target="_blank">
