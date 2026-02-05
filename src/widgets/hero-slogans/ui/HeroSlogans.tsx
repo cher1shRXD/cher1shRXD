@@ -24,7 +24,7 @@ const HeroSlogans = () => {
               </span>
             )}
             {slogan.pointer && (
-              <span className="absolute top-1/2 -right-20 -translate-x-1/2 text-4xl cursor-guide">
+              <span className="absolute top-1/2 -right-20 -translate-x-[80%] text-4xl cursor-guide">
                 <Cursor />
               </span>
             )}
