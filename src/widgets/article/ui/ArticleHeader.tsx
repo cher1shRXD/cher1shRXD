@@ -89,7 +89,7 @@ const ArticleHeader = ({ project }: Props) => {
               {project.tech_stacks.multi_select.map((tech) => (
                 <span
                   key={tech.id}
-                  className="px-3 py-1 text-sm font-medium text-text bg-transparent border border-text rounded-full"
+                  className="h-7.5 px-3 py-1 text-sm font-medium text-text bg-transparent border border-text rounded-full whitespace-nowrap"
                 >
                   {tech.name.replace(/\s+/g, ' ').trim()}
                 </span>
