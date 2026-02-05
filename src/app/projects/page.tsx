@@ -1,8 +1,25 @@
 import { ProjectApi } from "@/entities/project/api";
 import Reveal from "@/shared/ui/Reveal";
 import ProjectsGrid from "@/widgets/projects/ui/ProjectsGrid";
+import { Metadata } from "next";
 
 export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "Projects | cher1shRXD",
+  description: "진행했던 프로젝트들을 확인하세요",
+  openGraph: {
+    title: "Projects | cher1shRXD",
+    description: "진행했던 프로젝트들을 확인하세요",
+    type: "website",
+    url: "https://cher1shrxd.me/projects",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | cher1shRXD",
+    description: "진행했던 프로젝트들을 확인하세요",
+  },
+};
 
 export default async function ProjectsPage() {
   const projects = await ProjectApi.getProjects();

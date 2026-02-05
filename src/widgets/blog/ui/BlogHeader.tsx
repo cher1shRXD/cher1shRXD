@@ -50,8 +50,8 @@ const BlogHeader = ({ post }: Props) => {
               src={image}
               alt={post.name.title[0]?.plain_text || "Blog post cover"}
               fill
-              className="object-cover"
-              priority
+              unoptimized
+              className="object-contain"
             />
           </div>
         </Reveal>

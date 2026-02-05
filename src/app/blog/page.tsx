@@ -1,8 +1,25 @@
 import { BlogApi } from "@/entities/blog/api";
 import Reveal from "@/shared/ui/Reveal";
 import BlogList from "@/widgets/blog/ui/BlogList";
+import { Metadata } from "next";
 
 export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "Blog | cher1shRXD",
+  description: "개발 과정에서의 인사이트와 학습 내용을 공유합니다",
+  openGraph: {
+    title: "Blog | cher1shRXD",
+    description: "개발 과정에서의 인사이트와 학습 내용을 공유합니다",
+    type: "website",
+    url: "https://cher1shrxd.me/blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | cher1shRXD",
+    description: "개발 과정에서의 인사이트와 학습 내용을 공유합니다",
+  },
+};
 
 export default async function BlogsPage() {
   const posts = await BlogApi.getPosts();

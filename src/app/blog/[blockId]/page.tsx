@@ -5,9 +5,57 @@ import ArticleContent from "@/widgets/article/ui/ArticleContent";
 import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import BlogNavigation from "@/widgets/blog/ui/BlogNavigation";
 import Reveal from "@/shared/ui/Reveal";
-import AdSlot from "@/shared/ui/AdSlot";
+import HorizontalAdSlot from "@/shared/ui/HorizontalAdSlot";
+import SideAdSlot from "@/shared/ui/SideAdSlot";
+import { Metadata } from "next";
 
 export const revalidate = 86400;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ blockId?: string }>;
+}): Promise<Metadata> {
+  const { blockId } = await params;
+
+  if (!blockId) {
+    return {
+      title: "Blog | cher1shRXD",
+    };
+  }
+
+  const data = await getBlogData(blockId);
+
+  if (!data) {
+    return {
+      title: "Blog Not Found | cher1shRXD",
+    };
+  }
+
+  const title = data.properties.name.title[0]?.plain_text || "Untitled";
+  const description = title;
+  const thumbnail =
+    data.properties.thumbnail?.files[0]?.file?.url ||
+    data.properties.thumbnail?.files[0]?.external?.url;
+
+  return {
+    title: `${title} | cher1shRXD`,
+    description,
+    openGraph: {
+      title: `${title} | cher1shRXD`,
+      description,
+      type: "article",
+      url: `https://cher1shrxd.me/blog/${blockId}`,
+      images: thumbnail ? [{ url: thumbnail }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | cher1shRXD`,
+      description,
+      images: thumbnail ? [thumbnail] : [],
+    },
+  };
+}
 
 export const generateStaticParams = async () => {
   const posts = await BlogApi.getPosts();
@@ -27,9 +75,7 @@ const getBlogData = async (pageId: string) => {
 const getAdjacentPosts = async (currentPageId: string) => {
   try {
     const posts = await BlogApi.getPosts();
-    const currentIndex = posts.findIndex(
-      (p) => p.id === currentPageId,
-    );
+    const currentIndex = posts.findIndex((p) => p.id === currentPageId);
 
     if (currentIndex === -1) return { prevPost: null, nextPost: null };
 
@@ -79,14 +125,14 @@ export default async function BlogPostPage({
       <BlogHeader post={properties} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <AdSlot position="top" />
+        <HorizontalAdSlot />
       </div>
 
       <div className="w-full px-4 sm:px-6">
         <div className="flex gap-8">
           <aside className="flex-1 hidden lg:block shrink-0 justify-center">
             <div className="w-full px-4 sticky top-56">
-              <AdSlot position="sidebar" />
+              <SideAdSlot />
             </div>
           </aside>
 
@@ -102,7 +148,7 @@ export default async function BlogPostPage({
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <AdSlot position="bottom" />
+        <HorizontalAdSlot />
       </div>
 
       <BlogNavigation

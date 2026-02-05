@@ -5,15 +5,63 @@ import ArticleContent from "@/widgets/article/ui/ArticleContent";
 import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import ArticleNavigation from "@/widgets/article/ui/ArticleNavigation";
 import Reveal from "@/shared/ui/Reveal";
+import { Metadata } from "next";
 
 export const revalidate = 86400;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ blockId?: string }>;
+}): Promise<Metadata> {
+  const { blockId } = await params;
+
+  if (!blockId) {
+    return {
+      title: "Projects | cher1shRXD",
+    };
+  }
+
+  const data = await getArticleData(blockId);
+
+  if (!data) {
+    return {
+      title: "Project Not Found | cher1shRXD",
+    };
+  }
+
+  const title = data.properties.name.title[0]?.plain_text || "Untitled";
+  const description =
+    data.properties.description?.rich_text[0]?.plain_text || title;
+  const thumbnail =
+    data.properties.thumbnail?.files[0]?.file?.url ||
+    data.properties.thumbnail?.files[0]?.external?.url;
+
+  return {
+    title: `${title} | cher1shRXD`,
+    description,
+    openGraph: {
+      title: `${title} | cher1shRXD`,
+      description,
+      type: "article",
+      url: `https://cher1shrxd.me/projects/${blockId}`,
+      images: thumbnail ? [{ url: thumbnail }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | cher1shRXD`,
+      description,
+      images: thumbnail ? [thumbnail] : [],
+    },
+  };
+}
 
 export const generateStaticParams = async () => {
   const projects = await ProjectApi.getProjects();
   return projects.map((project) => ({
     blockId: project.id,
   }));
-}
+};
 
 const getArticleData = async (blockId: string) => {
   try {
