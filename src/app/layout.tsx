@@ -5,6 +5,7 @@ import { ThemeSetter } from "@/shared/themes/ThemeSetter";
 import Header from "@/widgets/header/ui/Header";
 import Footer from "@/widgets/footer/ui/Footer";
 import LenisProvider from "@/shared/providers/LenisProvider";
+import InitScrollProvider from "@/shared/providers/InitScrollProvider";
 
 export const metadata: Metadata = {
   title: "cher1shRXD's Portfolio",
@@ -23,6 +24,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased bg-background text-text pt-20 md:pt-40">
         <LoadingBar color="var(--theme-color-primary)" />
+        <InitScrollProvider />
         <Header />
         <LenisProvider>
           <main>{children}</main>
