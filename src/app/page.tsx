@@ -1,5 +1,3 @@
-export const revalidate = 60 * 60 * 2;
-
 import { AwardApi } from "@/entities/award/api";
 import { EducationApi } from "@/entities/education/api";
 import { LicenseApi } from "@/entities/license/api";
@@ -12,6 +10,8 @@ import HeroSlogans from "@/widgets/hero-slogans/ui/HeroSlogans";
 import ValuesQuote from "@/widgets/values-quote/ui/ValuesQuote";
 import ProfileSection from "@/widgets/profile/ui/ProfileSection";
 import OverviewSection from "@/widgets/overview/ui/OverviewSection";
+
+export const revalidate = 60 * 60 * 24;
 
 export default async function HomePage() {
   const [techStacks, awards, educations, licenses, personalInfo] =
