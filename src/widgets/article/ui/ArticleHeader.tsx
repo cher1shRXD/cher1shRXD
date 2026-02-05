@@ -2,6 +2,7 @@ import { Project } from "@/entities/project/types";
 import { formatDate } from "@/shared/utils/format-date";
 import Image from "next/image";
 import { Link } from "@cher1shrxd/loading";
+import A from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Reveal from "@/shared/ui/Reveal";
 import Github from "@/shared/icons/Github";
@@ -103,23 +104,23 @@ const ArticleHeader = ({ project }: Props) => {
         <Reveal delay={0.4} triggerOnce>
           <div className="flex flex-wrap gap-3 mb-10">
             {project.github_repo?.url && (
-              <Link
+              <A
                 href={project.github_repo.url}
                 target="_blank"
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-text rounded-full hover:bg-text hover:text-background transition-colors"
               >
                 <Github className="w-4 h-4" />
                 <span>GitHub</span>
-              </Link>
+              </A>
             )}
             {project.deployed_url?.url && (
-              <Link
+              <A
                 href={project.deployed_url.url}
                 target="_blank"
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-text text-background rounded-full hover:bg-text/80 transition-colors"
               >
                 <span>서비스 바로가기</span>
-              </Link>
+              </A>
             )}
           </div>
         </Reveal>
