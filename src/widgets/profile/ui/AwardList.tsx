@@ -23,7 +23,7 @@ const AwardList = ({ awards }: Props) => {
                 </span>
               </div>
               <div className="flex items-start xl:items-end flex-col xl:flex-row gap-0.5 sm:gap-1">
-                <div className="text-[10px] sm:text-base md:text-lg lg:text-xl font-medium break-keep">
+                <div className="text-[10px] sm:text-base md:text-lg lg:text-xl font-medium">
                   {award.name.title[0].plain_text}
                 </div>
                 <div className="text-xs md:text-sm text-text/50">

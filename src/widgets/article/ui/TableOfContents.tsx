@@ -84,8 +84,8 @@ const TableOfContents = ({ blocks }: Props) => {
 
   return (
     <>
-      <nav className="hidden xl:block fixed right-8 top-1/2 -translate-y-1/2 w-64 max-h-[60vh] overflow-y-auto">
-        <div className="p-4 bg-surface/50 backdrop-blur-sm border border-border rounded-xl">
+      <nav className="hidden xl:block fixed right-8 top-44 bottom-20 w-64 overflow-y-auto">
+        <div className="p-4 bg-surface/50 backdrop-blur-sm border border-border rounded-xl sticky top-0">
           <h3 className="text-sm font-semibold text-text/60 uppercase tracking-wider mb-4">
             On this page
           </h3>

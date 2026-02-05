@@ -56,7 +56,7 @@ const ArticleHeader = ({ project }: Props) => {
 
       <Reveal delay={0.3} triggerOnce>
         <h2 className="text-lg sm:text-xl font-bold text-text mb-4 tracking-wide">
-          PROJECT INFO
+          METADATA
         </h2>
         <div className="border-t-2 border-text pt-6 mb-10">
           <div className="flex flex-col md:flex-row md:justify-between gap-6">
@@ -99,7 +99,6 @@ const ArticleHeader = ({ project }: Props) => {
         </div>
       </Reveal>
 
-      {/* Links (optional, shown if exists) */}
       {(project.github_repo?.url || project.deployed_url?.url) && (
         <Reveal delay={0.4} triggerOnce>
           <div className="flex flex-wrap gap-3 mb-10">

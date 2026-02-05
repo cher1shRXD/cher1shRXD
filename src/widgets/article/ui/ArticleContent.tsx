@@ -195,7 +195,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
       }
       return (
         <p
-          className={`my-2 leading-relaxed break-keep text-text/80 ${colorMap[block.paragraph.color] || ""} pl-8`}>
+          className={`my-2 leading-relaxed text-text/80 ${colorMap[block.paragraph.color] || ""} pl-8`}>
           <RichText richText={block.paragraph.rich_text} />
         </p>
       );

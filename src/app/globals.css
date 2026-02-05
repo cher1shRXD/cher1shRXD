@@ -6,6 +6,7 @@
   font-family: "Pretendard", sans-serif;
   user-select: none;
   scroll-behavior: smooth;
+  word-break: keep-all;
 }
 
 .font-playpen {

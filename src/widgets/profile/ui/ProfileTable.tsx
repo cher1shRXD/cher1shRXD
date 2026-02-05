@@ -21,7 +21,7 @@ const ProfileTable = ({ personalInfo }: Props) => {
             <span className="sm:hidden">📍</span>
             <span className="hidden sm:inline">주소</span>
           </th>
-          <td className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2 break-keep">{personalInfo.address}</td>
+          <td className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2">{personalInfo.address}</td>
         </tr>
         <tr className="border border-border">
           <th className="px-3 py-1.5 sm:px-4 md:px-5 md:py-2 xl:px-6 xl:py-2 border-r border-border">
