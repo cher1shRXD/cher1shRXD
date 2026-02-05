@@ -25,25 +25,10 @@
   }
 }
 
-.delayed-show {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-.animation-delay-200 {
-  animation-delay: 0.2s;
+.animation-delay-300 {
+  animation-delay: 300ms;
 }
 
-.animation-delay-500 {
-  animation-delay: 0.5s;
-}
-
-.animation-delay-700 {
-  animation-delay: 0.7s;
-}
-
-.animation-delay-1000 {
-  animation-delay: 1s;
-}
 
 @keyframes neonFlicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
@@ -68,4 +53,91 @@
     0 0 80px var(--theme-color-primary);
   animation: neonFlicker 5s linear infinite;
   will-change: opacity;
+}
+
+@keyframes cursor-guide {
+  0% {
+    opacity: 0;
+    transform: translateX(0px) translateY(80%) rotate(-25deg);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-1px) translateY(79%) rotate(-25deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-3px) translateY(77.5%) rotate(-25deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-6px) translateY(75.5%) rotate(-25deg);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(-10px) translateY(73%) rotate(-25deg);
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(-14px) translateY(71%) rotate(-25deg);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(-18px) translateY(69%) rotate(-25deg);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-22px) translateY(67%) rotate(-25deg);
+  }
+  45% {
+    opacity: 1;
+    transform: translateX(-26px) translateY(65%) rotate(-25deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-32px) translateY(63%) rotate(-25deg);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(-38px) translateY(61%) rotate(-25deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-43px) translateY(59%) rotate(-25deg);
+  }
+  65% {
+    opacity: 1;
+    transform: translateX(-48px) translateY(57%) rotate(-25deg);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-52px) translateY(55%) rotate(-25deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(-56px) translateY(53.5%) rotate(-25deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-59px) translateY(52%) rotate(-25deg);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-61px) translateY(51%) rotate(-25deg);
+  }
+  90% {
+    opacity: 0.8;
+    transform: translateX(-63px) translateY(50.5%) rotate(-25deg);
+  }
+  95% {
+    opacity: 0.4;
+    transform: translateX(-64px) translateY(50%) rotate(-25deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-64px) translateY(50%) rotate(-25deg);
+  }
+}
+
+.cursor-guide {
+  animation: cursor-guide 3s linear infinite;
 }
