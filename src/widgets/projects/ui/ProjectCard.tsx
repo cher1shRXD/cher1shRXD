@@ -14,7 +14,7 @@ interface Props {
 const ProjectCard = ({ project, delay = 0 }: Props) => {
   return (
     <Reveal delay={delay} triggerOnce>
-      <div className="group relative bg-surface border border-border sm:border-2 rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden hover:border-primary transition-all duration-300">
+      <div className="group relative bg-surface border border-border sm:border-2 rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden hover:border-primary transition-all duration-300 cursor-pointer">
         {project.thumbnail && project.thumbnail.url && (
           <div className="relative w-full h-40 sm:h-48 md:h-52 lg:h-56 xl:h-60 overflow-hidden bg-surface/50">
             <Image
@@ -28,14 +28,10 @@ const ProjectCard = ({ project, delay = 0 }: Props) => {
 
         <div className="p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 flex flex-col gap-3 sm:gap-4 md:gap-5">
           <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
-            <span className="text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 rounded-full bg-primary/20 text-primary font-medium">
-              {project.status.status.name}
+            <span
+              className={`text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 rounded-full ${project.is_deployed.status.name === "Deployed" ? "bg-green-500/20 text-green-500" : "bg-red-500/20 text-red-500"} font-medium`}>
+              {project.is_deployed.status.name}
             </span>
-            {project.is_deployed.status.name === "Deployed" && (
-              <span className="text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 rounded-full bg-green-500/20 text-green-500 font-medium">
-                배포됨
-              </span>
-            )}
           </div>
 
           <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold font-playpen text-primary">
@@ -83,7 +79,7 @@ const ProjectCard = ({ project, delay = 0 }: Props) => {
                 target="_blank"
                 className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-base text-text/70 hover:text-primary transition-colors">
                 <Globe className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" />
-                <span>Live Demo</span>
+                <span>Go to Service</span>
               </Link>
             )}
           </div>
