@@ -25,7 +25,7 @@ export const ProjectApi = {
     return res.results as ResultResponse<Project>[];
   },
 
-  async getProjectBySlug(blockId: ResultResponse<Project>["id"]) {
+  async getProjectById(blockId: ResultResponse<Project>["id"]) {
     const blocks = [];
     let cursor: string | undefined;
 
