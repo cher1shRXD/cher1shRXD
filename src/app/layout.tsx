@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="ko" suppressHydrationWarning>
       <head>
         <ThemeSetter />
+        <meta name="google-adsense-account" content="ca-pub-6661151683803615" />
       </head>
       <body className="antialiased bg-background text-text pt-20 md:pt-40">
         <LoadingBar color="var(--theme-color-primary)" />
