@@ -231,7 +231,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
           id={block.id}
           className="flex items-stretch gap-3 my-2 scroll-mt-24 pl-4">
           <h4
-            className={`font-bold text-text/90 ${colorMap[block.heading_3.color] || ""}`}>
+            className={`md:text-lg lg:tex-xl font-bold text-text/90 ${colorMap[block.heading_3.color] || ""}`}>
             <RichText richText={block.heading_3.rich_text} />
           </h4>
         </div>
