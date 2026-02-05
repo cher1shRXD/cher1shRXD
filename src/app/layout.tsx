@@ -6,6 +6,7 @@ import Header from "@/widgets/header/ui/Header";
 import Footer from "@/widgets/footer/ui/Footer";
 import LenisProvider from "@/shared/providers/LenisProvider";
 import InitScrollProvider from "@/shared/providers/InitScrollProvider";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "cher1shRXD's Portfolio",
@@ -24,6 +25,31 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-6661151683803615" />
       </head>
       <body className="antialiased bg-background text-text pt-20 md:pt-40">
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-TLSWZB7P');`,
+          }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6661151683803615"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TLSWZB7P"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <LoadingBar color="var(--theme-color-primary)" />
         <InitScrollProvider />
         <Header />
