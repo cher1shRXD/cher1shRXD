@@ -5,8 +5,6 @@ import ArticleContent from "@/widgets/article/ui/ArticleContent";
 import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import BlogNavigation from "@/widgets/blog/ui/BlogNavigation";
 import Reveal from "@/shared/ui/Reveal";
-import HorizontalAdSlot from "@/shared/ui/HorizontalAdSlot";
-import SideAdSlot from "@/shared/ui/SideAdSlot";
 import { Metadata } from "next";
 
 export const revalidate = 86400;
@@ -121,34 +119,15 @@ export default async function BlogPostPage({
   const { prevPost, nextPost } = await getAdjacentPosts(blockId);
 
   return (
-    <main className="min-h-screen pb-20">
+    <main className="min-h-screen pb-20 px-4 sm:px-6">
       <BlogHeader post={properties} />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <HorizontalAdSlot />
-      </div>
-
-      <div className="w-full px-4 sm:px-6">
-        <div className="flex gap-8">
-          <aside className="flex-1 hidden lg:block shrink-0 justify-center">
-            <div className="w-full px-4 sticky top-56">
-              <SideAdSlot />
-            </div>
-          </aside>
-
-          <div className="w-full max-w-4xl">
-            <Reveal threshold={0} triggerOnce>
-              <article>
-                <ArticleContent blocks={blocks} />
-              </article>
-            </Reveal>
-          </div>
-          <div className="flex-1" />
-        </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <HorizontalAdSlot />
+      <div className="w-full max-w-4xl mx-auto">
+        <Reveal threshold={0} triggerOnce>
+          <article>
+            <ArticleContent blocks={blocks} />
+          </article>
+        </Reveal>
       </div>
 
       <BlogNavigation
