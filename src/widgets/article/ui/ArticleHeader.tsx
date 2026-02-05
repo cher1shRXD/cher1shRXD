@@ -14,6 +14,9 @@ interface Props {
 const ArticleHeader = ({ project }: Props) => {
   const startDate = project.duration.date?.start;
   const endDate = project.duration.date?.end;
+  const image = project.thumbnail?.files[0]?.file?.url ||
+    project.thumbnail?.files[0]?.external?.url ||
+    null;
 
   return (
     <header className="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
@@ -29,10 +32,10 @@ const ArticleHeader = ({ project }: Props) => {
 
       <Reveal delay={0.1} triggerOnce>
         <div className="flex items-center gap-4 sm:gap-6 mb-2">
-          {project.thumbnail?.url && (
+          {image && (
             <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-border bg-surface">
               <Image
-                src={project.thumbnail.url}
+                src={image}
                 alt={project.name.title[0]?.plain_text || "Project logo"}
                 fill
                 className="object-contain p-2"
