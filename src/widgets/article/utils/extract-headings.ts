@@ -22,12 +22,6 @@ export const extractHeadings = (blocks: NotionBlockWithChildren[]): HeadingItem[
         text: block.heading_2.rich_text.map((t) => t.plain_text).join(""),
         level: 2,
       });
-    } else if (block.type === "heading_3") {
-      headings.push({
-        id: block.id,
-        text: block.heading_3.rich_text.map((t) => t.plain_text).join(""),
-        level: 3,
-      });
     }
   }
 
