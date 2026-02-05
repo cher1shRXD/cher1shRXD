@@ -21,7 +21,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <div className="w-full max-w-440 py-32 mx-auto px-4 flex flex-col gap-18">
+      <section className="w-full max-w-440 py-32 mx-auto px-4 flex flex-col gap-18">
         <h1 className="text-7xl self-start delayed-show animation-delay-200 relative hover:[&>div]:opacity-100">
           <span className="font-medium font-playpen">CLEAR INTERFACES</span>
           <div className="absolute -bottom-12 left-10 opacity-0 transition-opacity duration-500 bg-primary text-white px-8 py-2 rounded-md">
@@ -58,11 +58,11 @@ export default async function HomePage() {
             <p className="text-lg">열정과 비례하는 결과를 창출합니다.</p>
           </div>
         </h1>
-      </div>
-      <div className="w-full pt-32 pb-16 flex items-center justify-center">
+      </section>
+      <section className="w-full pt-32 pb-16 flex items-center justify-center">
         <Intro />
-      </div>
-      <div className="w-full max-w-440 mx-auto px-4 flex flex-col text-center relative mb-32">
+      </section>
+      <section className="w-full max-w-440 mx-auto px-4 flex flex-col text-center relative mb-32">
         <p className="text-2xl whitespace-pre-wrap break-keep leading-[180%] border-y border-border py-20 mx-8 italic font-semibold">
           {personalInfo.values}
         </p>
@@ -72,8 +72,8 @@ export default async function HomePage() {
         <span className="absolute bottom-16 right-28 text-5xl text-primary">
           &rdquo;
         </span>
-      </div>
-      <div className="w-full max-w-440 mx-auto px-4 flex flex-col gap-16 mb-64">
+      </section>
+      <section className="w-full max-w-440 mx-auto px-4 flex flex-col gap-16 mb-64">
         <h1 className="text-6xl font-semibold font-playpen tracking-widest">
           PROFILE.
         </h1>
@@ -198,12 +198,12 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full max-w-440 h-[500vh] mx-auto px-4 flex flex-col gap-16">
+      </section>
+      <section className="w-full max-w-440 h-[500vh] mx-auto px-4 flex flex-col gap-16">
         <h1 className="text-6xl font-semibold font-playpen tracking-widest">
           TECH STACKS.
         </h1>
-      </div>
+      </section>
       <div className="h-screen"></div>
     </>
   );
