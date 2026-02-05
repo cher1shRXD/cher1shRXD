@@ -25,17 +25,22 @@ export const ProjectApi = {
     return res.results as ResultResponse<Project>[];
   },
 
-  async getProjectBySlug(slug: number) {
-    const res = await notion.dataSources.query({
-      data_source_id: this.id,
-      filter: {
-        property: "slug",
-        number: {
-          equals: slug,
-        },
-      },
-    });
+  async getProjectBySlug(blockId: ResultResponse<Project>["id"]) {
+    const blocks = [];
+    let cursor: string | undefined;
 
-    return res.results[0] as ResultResponse<Project>;
-  }
+    while (true) {
+      const res = await notion.blocks.children.list({
+        block_id: blockId,
+        start_cursor: cursor,
+      });
+
+      blocks.push(...res.results);
+
+      if (!res.has_more) break;
+      cursor = res.next_cursor ?? undefined;
+    }
+
+    return blocks;
+  },
 };
