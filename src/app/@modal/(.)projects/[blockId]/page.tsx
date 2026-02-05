@@ -6,6 +6,13 @@ import ArticleContent from "@/widgets/article/ui/ArticleContent";
 
 export const revalidate = 86400;
 
+export const generateStaticParams = async () => {
+  const projects = await ProjectApi.getProjects();
+  return projects.map((project) => ({
+    blockId: project.id,
+  }));
+};
+
 export default async function ProjectModal({
   params,
 }: {

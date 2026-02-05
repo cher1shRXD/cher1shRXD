@@ -6,6 +6,13 @@ import ArticleContent from "@/widgets/article/ui/ArticleContent";
 
 export const revalidate = 86400;
 
+export const generateStaticParams = async () => {
+  const posts = await BlogApi.getPosts();
+  return posts.map((post) => ({
+    blockId: post.id,
+  }));
+};
+
 export default async function BlogModal({
   params,
 }: {
