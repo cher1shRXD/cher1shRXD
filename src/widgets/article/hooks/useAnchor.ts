@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { extractHeadings } from "../utils/extract-headings";
-import { NotionBlockWithChildren } from "@/entities/project/api";
+import { NotionBlockWithChildren } from "@/shared/types/notion-block-with-children";
 
 export const useAnchor = (blocks: NotionBlockWithChildren[]) => {
   const [activeId, setActiveId] = useState<string>("");

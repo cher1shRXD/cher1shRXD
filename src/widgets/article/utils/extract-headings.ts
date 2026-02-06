@@ -1,4 +1,4 @@
-import { NotionBlockWithChildren } from "@/entities/project/api";
+import { NotionBlockWithChildren } from "@/shared/types/notion-block-with-children";
 
 interface HeadingItem {
   id: string;
