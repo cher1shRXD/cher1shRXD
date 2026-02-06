@@ -2,10 +2,7 @@ import { notion } from "@/shared/libs/notion";
 import { ResultResponse } from "@/shared/types/result-response";
 import { Project } from "../types";
 import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-
-export type NotionBlockWithChildren = BlockObjectResponse & {
-  children?: NotionBlockWithChildren[];
-};
+import { NotionBlockWithChildren } from "@/shared/types/notion-block-with-children";
 
 export const ProjectApi = {
   id: process.env.PROJECT_DB_ID!,
@@ -45,7 +42,7 @@ export const ProjectApi = {
       });
 
       const fullBlocks = res.results.filter(
-        (block): block is BlockObjectResponse => "type" in block
+        (block): block is BlockObjectResponse => "type" in block,
       );
 
       blocks.push(...fullBlocks);
@@ -75,7 +72,7 @@ export const ProjectApi = {
       });
 
       const fullBlocks = res.results.filter(
-        (block): block is BlockObjectResponse => "type" in block
+        (block): block is BlockObjectResponse => "type" in block,
       );
 
       blocks.push(...fullBlocks);

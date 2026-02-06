@@ -14,10 +14,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
@@ -53,7 +51,6 @@ export default function RootLayout({
         </noscript>
         <LoadingBar color="var(--theme-color-primary)" />
         <Header />
-        {modal}
         <LenisProvider>
           <main>{children}</main>
           <Footer />

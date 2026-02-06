@@ -2,10 +2,7 @@ import { notion } from "@/shared/libs/notion";
 import { ResultResponse } from "@/shared/types/result-response";
 import { BlogPost } from "../types";
 import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-
-export type NotionBlockWithChildren = BlockObjectResponse & {
-  children?: NotionBlockWithChildren[];
-};
+import { NotionBlockWithChildren } from "@/shared/types/notion-block-with-children";
 
 export const BlogApi = {
   id: process.env.BLOG_DB_ID!,

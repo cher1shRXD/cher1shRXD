@@ -28,7 +28,7 @@ const ProjectsGrid = ({ projects }: Props) => {
           <ProjectCard 
             project={project.properties} 
             projectId={project.id}
-            delay={0.6 + index * 0.1} 
+            delay={0.6 + index * 0.1}
           />
         </div>
       ))}
