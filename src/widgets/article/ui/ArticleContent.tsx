@@ -77,9 +77,9 @@ const RichText = ({ richText }: { richText: RichTextItemResponse[] }) => {
             <Link
               href={text.text.link.url}
               target="_blank"
-              className="text-primary hover:underline inline-flex items-center gap-1">
+              className="text-primary hover:underline inline-flex items-center gap-1 break-all">
               {textContent}
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3 h-3 shrink-0" />
             </Link>
           ) : (
             textContent
@@ -305,7 +305,9 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
     case "quote": {
       return (
         <blockquote
-          className={`border-l-2 border-text pl-4 my-4 ml-8 text-text/70 ${colorMap[block.quote.color] || ""} wrap-break-word`}>
+          className={`p-4 my-4 ml-8 text-text/70 ${colorMap[block.quote.color] || ""} wrap-break-word relative`}>
+          <span className="text-xl md:text-3xl text-primary absolute top-0 left-0">&ldquo;</span>
+          <span className="text-xl md:text-3xl text-primary absolute bottom-0 right-0">&rdquo;</span>
           <RichText richText={block.quote.rich_text} />
           {block.children && block.children.length > 0 && (
             <div className="mt-2">
