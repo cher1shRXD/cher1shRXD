@@ -13,8 +13,20 @@ import ValuesQuote from "@/widgets/values-quote/ui/ValuesQuote";
 import ProfileSection from "@/widgets/profile/ui/ProfileSection";
 import OverviewSection from "@/widgets/overview/ui/OverviewSection";
 import HomeContent from "@/widgets/overview/ui/HomeContent";
+import Script from "next/script";
+import { Metadata } from "next";
 
-export const revalidate = 86400;
+export const revalidate = 31536000;
+
+export const metadata: Metadata = {
+  openGraph: {
+    type: "website",
+    url: "https://cher1shrxd.me",
+  },
+  alternates: {
+    canonical: "https://cher1shrxd.me",
+  },
+};
 
 export default async function HomePage() {
   const [
@@ -35,8 +47,30 @@ export default async function HomePage() {
     ProjectApi.getProjects(4),
   ]);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "김태우",
+    alternateName: "cher1shRXD",
+    url: "https://cher1shrxd.me",
+    email: personalInfo.email,
+    telephone: personalInfo.phone,
+    jobTitle: "Frontend Developer",
+    description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자",
+    sameAs: [
+      personalInfo.github,
+      personalInfo.velog,
+    ].filter(Boolean),
+    knowsAbout: techStacks.map((t) => t.properties.name.title[0]?.plain_text).filter(Boolean),
+  };
+
   return (
     <>
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeroSlogans />
       <section className="w-full xl:h-[200vh] xl:pt-32 pb-16 flex items-start justify-center">
         <Intro />

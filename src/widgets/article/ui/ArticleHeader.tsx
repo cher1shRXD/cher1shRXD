@@ -16,18 +16,15 @@ const ArticleHeader = ({ project }: Props) => {
   const endDate = project.duration.date?.end;
   const fileUrl = project.thumbnail?.files[0]?.file?.url;
   const externalUrl = project.thumbnail?.files[0]?.external?.url;
-  
-  const image = fileUrl 
-    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
-    : externalUrl || null;
+
+  const image = fileUrl || externalUrl || null;
 
   return (
     <header className="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
       <Reveal triggerOnce>
         <Link
           href="/projects"
-          className="inline-flex items-center gap-2 text-text/60 hover:text-primary transition-colors mb-8"
-        >
+          className="inline-flex items-center gap-2 text-text/60 hover:text-primary transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" />
           <span className="text-sm">프로젝트 목록</span>
         </Link>
@@ -69,13 +66,19 @@ const ArticleHeader = ({ project }: Props) => {
             <div className="space-y-3">
               {project.teammates.number !== null && (
                 <div className="flex items-baseline gap-2">
-                  <span className="text-sm sm:text-base font-bold text-text min-w-20">개발 인원:</span>
-                  <span className="text-sm sm:text-base text-text/80">{project.teammates.number}명</span>
+                  <span className="text-sm sm:text-base font-bold text-text min-w-20">
+                    개발 인원:
+                  </span>
+                  <span className="text-sm sm:text-base text-text/80">
+                    {project.teammates.number}명
+                  </span>
                 </div>
               )}
               {project.team_structure.rich_text[0] && (
                 <div className="flex items-baseline gap-2">
-                  <span className="text-sm sm:text-base font-bold text-text min-w-20">인원 구성:</span>
+                  <span className="text-sm sm:text-base font-bold text-text min-w-20">
+                    인원 구성:
+                  </span>
                   <span className="text-sm sm:text-base text-text/80">
                     {project.team_structure.rich_text[0].plain_text}
                   </span>
@@ -83,9 +86,12 @@ const ArticleHeader = ({ project }: Props) => {
               )}
               {startDate && (
                 <div className="flex items-baseline gap-2">
-                  <span className="text-sm sm:text-base font-bold text-text min-w-20">개발 기간:</span>
+                  <span className="text-sm sm:text-base font-bold text-text min-w-20">
+                    개발 기간:
+                  </span>
                   <span className="text-sm sm:text-base text-text/80">
-                    {formatDate(startDate)} - {endDate ? formatDate(endDate) : "진행중"}
+                    {formatDate(startDate)} -{" "}
+                    {endDate ? formatDate(endDate) : "진행중"}
                   </span>
                 </div>
               )}
@@ -95,9 +101,8 @@ const ArticleHeader = ({ project }: Props) => {
               {project.tech_stacks.multi_select.map((tech) => (
                 <span
                   key={tech.id}
-                  className="h-7.5 px-3 py-1 text-sm font-medium text-text bg-transparent border border-text rounded-full whitespace-nowrap"
-                >
-                  {tech.name.replace(/\s+/g, ' ').trim()}
+                  className="h-7.5 px-3 py-1 text-sm font-medium text-text bg-transparent border border-text rounded-full whitespace-nowrap">
+                  {tech.name.replace(/\s+/g, " ").trim()}
                 </span>
               ))}
             </div>
@@ -112,8 +117,7 @@ const ArticleHeader = ({ project }: Props) => {
               <A
                 href={project.github_repo.url}
                 target="_blank"
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-text rounded-full hover:bg-text hover:text-background transition-colors"
-              >
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-text rounded-full hover:bg-text hover:text-background transition-colors">
                 <Github className="w-4 h-4" />
                 <span>GitHub</span>
               </A>
@@ -122,8 +126,7 @@ const ArticleHeader = ({ project }: Props) => {
               <A
                 href={project.deployed_url.url}
                 target="_blank"
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-text text-background rounded-full hover:bg-text/80 transition-colors"
-              >
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-text text-background rounded-full hover:bg-text/80 transition-colors">
                 <span>서비스 바로가기</span>
               </A>
             )}

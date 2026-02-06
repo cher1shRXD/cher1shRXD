@@ -5,6 +5,7 @@ import ArticleContent from "@/widgets/article/ui/ArticleContent";
 import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import BlogNavigation from "@/widgets/blog/ui/BlogNavigation";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const revalidate = 31536000;
 
@@ -34,13 +35,14 @@ export async function generateMetadata({
   const fileUrl = data.properties.thumbnail?.files[0]?.file?.url;
   const externalUrl = data.properties.thumbnail?.files[0]?.external?.url;
 
-  const thumbnail = fileUrl 
-    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
-    : externalUrl || null;
+  const thumbnail = fileUrl || externalUrl || null;
 
   return {
     title: `${title} | cher1shRXD`,
     description,
+    alternates: {
+      canonical: `https://cher1shrxd.me/blog/${blockId}`,
+    },
     openGraph: {
       title: `${title} | cher1shRXD`,
       description,
@@ -120,8 +122,42 @@ export default async function BlogPostPage({
   const { properties, blocks } = data;
   const { prevPost, nextPost } = await getAdjacentPosts(blockId);
 
+  const title = properties.name.title[0]?.plain_text || "Untitled";
+  const fileUrl = properties.thumbnail?.files[0]?.file?.url;
+  const externalUrl = properties.thumbnail?.files[0]?.external?.url;
+  const thumbnail = fileUrl || externalUrl || null;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    image: thumbnail ? [thumbnail] : [],
+    datePublished: data.properties.created_at.created_time,
+    dateModified: data.properties.updated_at.last_edited_time,
+    author: {
+      "@type": "Person",
+      name: "김태우",
+      url: "https://cher1shrxd.me",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "cher1shRXD",
+      url: "https://cher1shrxd.me",
+    },
+    description: title,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://cher1shrxd.me/blog/${blockId}`,
+    },
+  };
+
   return (
     <main className="min-h-screen pb-20">
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <BlogHeader post={properties} />
 
       <article className="w-full max-w-4xl mx-auto px-4 sm:px-6">

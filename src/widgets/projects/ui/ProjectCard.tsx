@@ -25,9 +25,7 @@ const ProjectCard = ({ project, projectId, delay = 0 }: Props) => {
   const fileUrl = project.thumbnail?.files[0]?.file?.url;
   const externalUrl = project.thumbnail?.files[0]?.external?.url;
   
-  const image = fileUrl 
-    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
-    : externalUrl || null;
+  const image = fileUrl || externalUrl || null;
 
   return (
     <Reveal delay={delay} triggerOnce threshold={0.1}>

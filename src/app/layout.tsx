@@ -9,8 +9,70 @@ import Script from "next/script";
 import InitScrollProvider from "@/shared/providers/InitScrollProvider";
 
 export const metadata: Metadata = {
-  title: "cher1shRXD's Portfolio",
-  description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다.",
+  metadataBase: new URL("https://cher1shrxd.me"),
+  title: {
+    default: "cher1shRXD's Portfolio | 김태우",
+    template: "%s | cher1shRXD",
+  },
+  description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다. 프론트엔드 개발자로서 사용자 경험과 코드 품질을 중요하게 생각합니다.",
+  keywords: [
+    "cher1shRXD",
+    "김태우",
+    "프론트엔드",
+    "개발자",
+    "포트폴리오",
+    "웹 개발",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Frontend Developer",
+    "Web Developer",
+  ],
+  authors: [{ name: "김태우", url: "https://cher1shrxd.me" }],
+  creator: "cher1shRXD",
+  publisher: "cher1shRXD",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: "https://cher1shrxd.me",
+    siteName: "cher1shRXD's Portfolio",
+    title: "cher1shRXD's Portfolio | 김태우",
+    description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "cher1shRXD Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "cher1shRXD's Portfolio | 김태우",
+    description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다.",
+    creator: "@cher1shRXD",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "google-site-verification-code",
+  },
 };
 
 export default function RootLayout({
