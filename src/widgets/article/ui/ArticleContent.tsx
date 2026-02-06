@@ -77,9 +77,9 @@ const RichText = ({ richText }: { richText: RichTextItemResponse[] }) => {
             <Link
               href={text.text.link.url}
               target="_blank"
-              className="text-primary hover:underline inline-flex items-center gap-1 break-all">
+              className="text-primary hover:underline break-all inline">
               {textContent}
-              <ExternalLink className="w-3 h-3 shrink-0" />
+              <ExternalLink className="w-3 h-3 inline ml-1" />
             </Link>
           ) : (
             textContent
