@@ -32,9 +32,12 @@ export async function generateMetadata({
   const title = data.properties.name.title[0]?.plain_text || "Untitled";
   const description =
     data.properties.description?.rich_text[0]?.plain_text || title;
-  const thumbnail =
-    data.properties.thumbnail?.files[0]?.file?.url ||
-    data.properties.thumbnail?.files[0]?.external?.url;
+  const fileUrl = data.properties.thumbnail?.files[0]?.file?.url;
+  const externalUrl = data.properties.thumbnail?.files[0]?.external?.url;
+
+  const thumbnail = fileUrl 
+    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
+    : externalUrl || null;
 
   return {
     title: `${title} | cher1shRXD`,

@@ -22,10 +22,12 @@ const ProjectCard = ({ project, projectId, delay = 0 }: Props) => {
     router.push(`/projects/${projectId}`);
   };
 
-  const image =
-    project.thumbnail?.files[0]?.file?.url ||
-    project.thumbnail?.files[0]?.external?.url ||
-    null;
+  const fileUrl = project.thumbnail?.files[0]?.file?.url;
+  const externalUrl = project.thumbnail?.files[0]?.external?.url;
+  
+  const image = fileUrl 
+    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
+    : externalUrl || null;
 
   return (
     <Reveal delay={delay} triggerOnce threshold={0.1}>

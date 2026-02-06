@@ -12,9 +12,12 @@ interface Props {
 }
 
 const BlogHeader = ({ post }: Props) => {
-  const image = post.thumbnail?.files[0]?.file?.url ||
-    post.thumbnail?.files[0]?.external?.url ||
-    null;
+  const fileUrl = post.thumbnail?.files[0]?.file?.url;
+  const externalUrl = post.thumbnail?.files[0]?.external?.url;
+  
+  const image = fileUrl 
+    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
+    : externalUrl || null;
 
   return (
     <header className="max-w-4xl mx-auto px-4 sm:px-6 pt-8">

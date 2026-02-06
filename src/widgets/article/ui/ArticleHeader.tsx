@@ -14,9 +14,12 @@ interface Props {
 const ArticleHeader = ({ project }: Props) => {
   const startDate = project.duration.date?.start;
   const endDate = project.duration.date?.end;
-  const image = project.thumbnail?.files[0]?.file?.url ||
-    project.thumbnail?.files[0]?.external?.url ||
-    null;
+  const fileUrl = project.thumbnail?.files[0]?.file?.url;
+  const externalUrl = project.thumbnail?.files[0]?.external?.url;
+  
+  const image = fileUrl 
+    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
+    : externalUrl || null;
 
   return (
     <header className="max-w-4xl mx-auto px-4 sm:px-6 pt-8">

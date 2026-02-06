@@ -19,10 +19,12 @@ const BlogCard = ({ post }: Props) => {
     router.push(`/blog/${post.id}`);
   };
 
-  const image =
-    properties.thumbnail?.files[0]?.file?.url ||
-    properties.thumbnail?.files[0]?.external?.url ||
-    null;
+  const fileUrl = properties.thumbnail?.files[0]?.file?.url;
+  const externalUrl = properties.thumbnail?.files[0]?.external?.url;
+  
+  const image = fileUrl 
+    ? `https://cher1shrxd.me/api/notion-image?url=${encodeURIComponent(fileUrl)}` 
+    : externalUrl || null;
 
   return (
     <article
