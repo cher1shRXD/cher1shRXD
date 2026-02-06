@@ -66,16 +66,23 @@ const RichText = ({ richText }: { richText: RichTextItemResponse[] }) => {
             className += ` ${colorMap[annotations.color] || ""}`;
           }
 
+          const textContent = text.text.content.split('\n').map((line, i, arr) => (
+            <span key={i}>
+              {line}
+              {i < arr.length - 1 && <br />}
+            </span>
+          ));
+
           const content = text.text.link ? (
             <Link
               href={text.text.link.url}
               target="_blank"
               className="text-primary hover:underline inline-flex items-center gap-1">
-              {text.text.content}
+              {textContent}
               <ExternalLink className="w-3 h-3" />
             </Link>
           ) : (
-            text.text.content
+            textContent
           );
 
           return (
@@ -195,7 +202,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
       }
       return (
         <p
-          className={`my-2 leading-relaxed text-text/80 ${colorMap[block.paragraph.color] || ""} pl-8`}>
+          className={`my-2 leading-relaxed text-text/80 ${colorMap[block.paragraph.color] || ""} pl-8 wrap-break-word overflow-wrap-anywhere`}>
           <RichText richText={block.paragraph.rich_text} />
         </p>
       );
@@ -205,7 +212,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
       return (
         <h1
           id={block.id}
-          className={`text-xl md:text-3xl lg:text-4xl font-bold text-text mt-14 mb-4 pt-4 scroll-mt-24 tracking-wide uppercase ${colorMap[block.heading_1.color] || ""} border-b border-border pb-1 md:pb-2`}>
+          className={`text-xl md:text-3xl lg:text-4xl font-bold text-text mt-14 mb-4 pt-4 scroll-mt-24 tracking-wide uppercase ${colorMap[block.heading_1.color] || ""} border-b border-border pb-1 md:pb-2 wrap-break-word`}>
           <RichText richText={block.heading_1.rich_text} />
         </h1>
       );
@@ -218,7 +225,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
           className="flex items-stretch gap-3 mt-8 mb-3 scroll-mt-24 pl-4">
           <div className="w-1 bg-text shrink-0" />
           <h2
-            className={`text-lg md:text-xl lg:text-2xl font-bold text-text ${colorMap[block.heading_2.color] || ""}`}>
+            className={`text-lg md:text-xl lg:text-2xl font-bold text-text ${colorMap[block.heading_2.color] || ""} wrap-break-word`}>
             <RichText richText={block.heading_2.rich_text} />
           </h2>
         </div>
@@ -231,7 +238,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
           id={block.id}
           className="flex items-stretch gap-3 my-2 scroll-mt-24 pl-4">
           <h4
-            className={`md:text-lg lg:tex-xl font-bold text-text/90 ${colorMap[block.heading_3.color] || ""}`}>
+            className={`md:text-lg lg:tex-xl font-bold text-text/90 ${colorMap[block.heading_3.color] || ""} wrap-break-word`}>
             <RichText richText={block.heading_3.rich_text} />
           </h4>
         </div>
@@ -241,7 +248,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
     case "bulleted_list_item": {
       return (
         <li
-          className={`ml-5 my-1.5 list-disc text-sm text-text/80 marker:text-text/40 ${colorMap[block.bulleted_list_item.color] || ""} pl-8`}>
+          className={`ml-5 my-1.5 list-disc text-sm text-text/80 marker:text-text/40 ${colorMap[block.bulleted_list_item.color] || ""} pl-8 wrap-break-word`}>
           <RichText richText={block.bulleted_list_item.rich_text} />
           {block.children && block.children.length > 0 && (
             <ul className="mt-1">
@@ -255,7 +262,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
     case "numbered_list_item": {
       return (
         <li
-          className={`ml-5 my-1.5 list-decimal text-sm text-text/80 marker:text-text/60 ${colorMap[block.numbered_list_item.color] || ""}`}>
+          className={`ml-5 my-1.5 list-decimal text-sm text-text/80 marker:text-text/60 ${colorMap[block.numbered_list_item.color] || ""} wrap-break-word`}>
           <RichText richText={block.numbered_list_item.rich_text} />
           {block.children && block.children.length > 0 && (
             <ol className="mt-1">
@@ -298,7 +305,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
     case "quote": {
       return (
         <blockquote
-          className={`border-l-2 border-text pl-4 my-4 ml-8 text-text/70 ${colorMap[block.quote.color] || ""}`}>
+          className={`border-l-2 border-text pl-4 my-4 ml-8 text-text/70 ${colorMap[block.quote.color] || ""} wrap-break-word`}>
           <RichText richText={block.quote.rich_text} />
           {block.children && block.children.length > 0 && (
             <div className="mt-2">
@@ -316,7 +323,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
       return (
         <div className="flex gap-3 p-4 my-4 ml-8 bg-surface/30 rounded-lg">
           <span className="text-xl shrink-0">{emoji}</span>
-          <div className="flex-1 text-text/80 text-sm leading-relaxed">
+          <div className="flex-1 text-text/80 text-sm leading-relaxed wrap-break-word">
             <RichText richText={block.callout.rich_text} />
           </div>
         </div>
