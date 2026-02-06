@@ -2,15 +2,16 @@
 
 import { useState, useEffect } from "react";
 import Hamburger from "./Hamburger";
-import FromisNine from "@/shared/icons/FromisNine";
 import Velog from "@/shared/icons/Velog";
 import Github from "@/shared/icons/Github";
-import Link from "next/link";
+import { Link } from "@cher1shrxd/loading";
+import A from "next/link";
 import NavItem from "./NavItem";
 import { ROUTES } from "../constants/routes";
 import { useScroll } from "../hooks/useScroll";
 import { ThemeToggle } from "@/shared/themes/ThemeToggle";
 import Reveal from "@/shared/ui/Reveal";
+import Logo from "@/shared/icons/Logo";
 
 const Header = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -18,13 +19,13 @@ const Header = () => {
 
   useEffect(() => {
     if (isMenuOpened) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isMenuOpened]);
 
@@ -41,21 +42,26 @@ const Header = () => {
             isMenuOpened={isMenuOpened}
             setIsMenuOpened={setIsMenuOpened}
           />
-          <FromisNine size={32} className="text-text cursor-pointer" />
+          <Link href="/">
+            <Logo size={48} className="text-text cursor-pointer" />
+          </Link>
           <div className="flex-1" />
-          <Link href="https://velog.io/@rxd123/posts" target="_blank">
+          <A href="https://velog.io/@rxd123/posts" target="_blank">
             <Velog size={24} className="text-text cursor-pointer" />
-          </Link>
-          <Link href="https://github.com/cher1shRXD" target="_blank">
+          </A>
+          <A href="https://github.com/cher1shRXD" target="_blank">
             <Github size={24} className="text-text cursor-pointer" />
-          </Link>
+          </A>
           <ThemeToggle />
         </div>
         <div
           className={`w-full ${isMenuOpened ? "h-[calc(100svh-5rem)]" : "h-0"} transition-all`}>
           {isMenuOpened && (
             <nav className="w-full h-full max-w-440  px-2 mx-auto">
-              <Reveal triggerOnce delay={0.3} className="flex flex-col items-start justify-start xl:gap-8 lg:gap-6 md:gap-4 gap-2">
+              <Reveal
+                triggerOnce
+                delay={0.3}
+                className="flex flex-col items-start justify-start xl:gap-8 lg:gap-6 md:gap-4 gap-2">
                 {ROUTES.map(({ name, href }) => (
                   <NavItem
                     key={href}
