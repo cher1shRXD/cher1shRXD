@@ -13,7 +13,7 @@ const Intro = () => {
   return (
     <div
       ref={ref}
-      className={`w-full h-[calc(95vh-5rem)] flex flex-col items-center justify-center bg-surface transition-[margin] duration-700 sticky top-24 ${
+      className={`w-full h-[calc(95vh-10rem)] flex flex-col items-center justify-center bg-surface transition-[margin] duration-700 sticky top-24 ${
         inView ? "mx-0 rounded-0" : "xl:mx-40 xl:rounded-4xl"
       } overflow-hidden delayed-show animation-delay-1000`}>
       <div className="w-full md:p-4 p-2 bg-border flex gap-2">
