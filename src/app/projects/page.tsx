@@ -3,7 +3,7 @@ import Reveal from "@/shared/ui/Reveal";
 import ProjectsGrid from "@/widgets/projects/ui/ProjectsGrid";
 import { Metadata } from "next";
 
-export const revalidate = 86400;
+export const revalidate = 31536000;
 
 export const metadata: Metadata = {
   title: "Projects | cher1shRXD",

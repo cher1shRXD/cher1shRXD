@@ -6,7 +6,7 @@ import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import BlogNavigation from "@/widgets/blog/ui/BlogNavigation";
 import { Metadata } from "next";
 
-export const revalidate = 86400;
+export const revalidate = 31536000;
 
 export async function generateMetadata({
   params,

@@ -3,7 +3,7 @@ export const MY_INFORMATION = {
   nickname: "cher1shRXD",
   email: "cher1shrxd@naver.me",
   birthday: "2008-04-01",
-  address: "경상남도 합천군 합천읍 옥산로 19 (수성오바드빌 501호)",
+  address: "경상남도 합천군 합천읍",
   phone: "010-4890-1466",
   github: "https://github.com/cher1shRXD",
   velog: "https://velog.io/@rxd123",

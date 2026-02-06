@@ -3,7 +3,7 @@ import Reveal from "@/shared/ui/Reveal";
 import BlogList from "@/widgets/blog/ui/BlogList";
 import { Metadata } from "next";
 
-export const revalidate = 86400;
+export const revalidate = 31536000;
 
 export const metadata: Metadata = {
   title: "Blog | cher1shRXD",
