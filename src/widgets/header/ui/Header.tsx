@@ -36,7 +36,7 @@ const Header = () => {
       <header
         className={`w-full ${isMenuOpened ? "bg-primary/80" : "bg-background"} flex flex-col items-center justify-start ${shouldShow ? "translate-y-0" : "-translate-y-full"} transition-transform duration-700`}>
         <div
-          className={`${isTop || isMenuOpened ? "border-0" : "border-b border-border"} w-full max-w-440 h-20 md:h-40 flex items-center justify-start px-2 gap-4`}>
+          className={`${isTop || isMenuOpened ? "border-0" : "border-b border-border"} w-full max-w-440 h-20 flex items-center justify-start px-2 gap-4`}>
           <Hamburger
             isMenuOpened={isMenuOpened}
             setIsMenuOpened={setIsMenuOpened}
@@ -52,7 +52,7 @@ const Header = () => {
           <ThemeToggle />
         </div>
         <div
-          className={`w-full ${isMenuOpened ? "h-[calc(100svh-5rem)] md:h-[calc(100svh-10rem)]" : "h-0"} transition-all`}>
+          className={`w-full ${isMenuOpened ? "h-[calc(100svh-5rem)]" : "h-0"} transition-all`}>
           {isMenuOpened && (
             <nav className="w-full h-full max-w-440  px-2 mx-auto">
               <Reveal triggerOnce delay={0.3} className="flex flex-col items-start justify-start xl:gap-8 lg:gap-6 md:gap-4 gap-2">

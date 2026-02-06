@@ -29,7 +29,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className="antialiased bg-background text-text pt-20 md:pt-40">
+      <body className="antialiased bg-background text-text pt-20">
         <Script
           id="gtm-script"
           strategy="afterInteractive"
