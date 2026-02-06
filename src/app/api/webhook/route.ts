@@ -38,13 +38,13 @@ export async function POST(reg: Request) {
     const idx = ids.indexOf(receivedId);
     switch (idx) {
       case 0:
-        revalidatePath("/projects");
+        revalidatePath("/projects", "layout");
         break;
       case 1:
-        revalidatePath("/blog");
+        revalidatePath("/blog", "layout");
         break;
       default:
-        revalidatePath("/");
+        revalidatePath("/", "layout");
         break;
     }
   }
