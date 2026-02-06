@@ -54,7 +54,7 @@ const BlogHeader = ({ post }: Props) => {
               alt={post.name.title[0]?.plain_text || "Blog post cover"}
               fill
               unoptimized
-              className="object-contain"
+              className="object-cover"
             />
           </div>
         </Reveal>

@@ -43,7 +43,7 @@ const BlogCard = ({ post }: Props) => {
       )}
 
       <div className="flex-1 p-5 flex flex-col gap-3">
-        <h2 className="text-lg font-bold text-text group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+        <h2 className="text-lg font-bold text-text transition-colors line-clamp-2 leading-snug">
           {properties.name.title[0]?.plain_text}
         </h2>
 

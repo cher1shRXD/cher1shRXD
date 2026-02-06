@@ -6,6 +6,7 @@ import Header from "@/widgets/header/ui/Header";
 import Footer from "@/widgets/footer/ui/Footer";
 import LenisProvider from "@/shared/providers/LenisProvider";
 import Script from "next/script";
+import InitScrollProvider from "@/shared/providers/InitScrollProvider";
 
 export const metadata: Metadata = {
   title: "cher1shRXD's Portfolio",
@@ -49,6 +50,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <InitScrollProvider />
         <LoadingBar color="var(--theme-color-primary)" />
         <Header />
         <LenisProvider>

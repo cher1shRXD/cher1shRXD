@@ -30,7 +30,7 @@ const TableOfContents = ({ blocks }: Props) => {
               <li key={heading.id}>
                 <button
                   onClick={() => handleClick(heading.id)}
-                  className={`text-left w-full text-sm transition-all duration-200 hover:text-primary ${
+                  className={`text-left w-full text-sm transition-all duration-200 hover:text-primary cursor-pointer ${
                     heading.level === 1
                       ? "font-medium"
                       : heading.level === 2

@@ -54,7 +54,7 @@ const ProjectCard = ({ project, projectId, delay = 0 }: Props) => {
             </span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold font-playpen text-primary">
+          <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold">
             {project.name.title[0].plain_text}
           </h3>
 
