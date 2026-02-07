@@ -47,7 +47,7 @@ export async function POST(reg: Request) {
       case 1:
         revalidatePath("/blog", "layout");
         console.log(body.type)
-        if (body.type === "page.content_created") {
+        if (body.type === "page.created") {
           try {
             const page = await notion.pages.retrieve({ 
               page_id: body.entity.id
