@@ -248,7 +248,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
     case "bulleted_list_item": {
       return (
         <li
-          className={`ml-5 my-1.5 list-disc text-sm text-text/80 marker:text-text/40 ${colorMap[block.bulleted_list_item.color] || ""} pl-8 wrap-break-word`}>
+          className={`ml-5 my-1.5 list-disc text-sm text-text/80 marker:text-text/40 ${colorMap[block.bulleted_list_item.color] || ""} wrap-break-word`}>
           <RichText richText={block.bulleted_list_item.rich_text} />
           {block.children && block.children.length > 0 && (
             <ul className="mt-1">
@@ -663,7 +663,7 @@ const ArticleContent = ({ blocks }: Props) => {
 
         if (firstBlock.type === "bulleted_list_item") {
           return (
-            <ul key={groupIndex} className="my-4">
+            <ul key={groupIndex} className="my-4 ml-8">
               {group.map((block) => (
                 <BlockRenderer key={block.id} block={block} />
               ))}
@@ -673,7 +673,7 @@ const ArticleContent = ({ blocks }: Props) => {
 
         if (firstBlock.type === "numbered_list_item") {
           return (
-            <ol key={groupIndex} className="my-4">
+            <ol key={groupIndex} className="my-4 ml-8">
               {group.map((block) => (
                 <BlockRenderer key={block.id} block={block} />
               ))}
