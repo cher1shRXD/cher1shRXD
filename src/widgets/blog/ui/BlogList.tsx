@@ -34,28 +34,30 @@ const BlogList = ({ posts }: Props) => {
 
   return (
     <div className="w-full flex flex-col gap-8">
-      <div className="relative max-w-xl">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text/40" />
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="제목으로 검색..."
-          className="w-full pl-10 pr-4 py-2 text-sm bg-background border border-border rounded-lg text-text placeholder:text-text/40 focus:outline-none focus:border-primary transition-colors"
+      <div className="w-full flex flex-col gap-4">
+        <div className="relative max-w-xl">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text/40" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="제목으로 검색..."
+            className="w-full pl-10 pr-4 py-2 text-sm bg-background border border-border rounded-lg text-text placeholder:text-text/40 focus:outline-none focus:border-primary transition-colors"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-text/40 hover:text-text text-sm">
+              ✕
+            </button>
+          )}
+        </div>
+        <BlogTagFilter
+          tags={tags}
+          onTagSelect={setSelectedTag}
+          selectedTag={selectedTag}
         />
-        {searchQuery && (
-          <button
-            onClick={() => setSearchQuery("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-text/40 hover:text-text text-sm">
-            ✕
-          </button>
-        )}
       </div>
-      <BlogTagFilter
-        tags={tags}
-        selectedTag={selectedTag}
-        onTagSelect={setSelectedTag}
-      />
 
       {filteredPosts.length === 0 ? (
         <div className="text-center py-20">
