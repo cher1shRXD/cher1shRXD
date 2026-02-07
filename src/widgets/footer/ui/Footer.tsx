@@ -64,6 +64,13 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-16 pt-6 sm:pt-7 md:pt-8 border-t border-border">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-3">
+            <Link
+              href="/privacy"
+              className="text-xs sm:text-sm text-text/60 hover:text-primary transition-colors">
+              개인정보처리방침
+            </Link>
+          </div>
           <p className="text-xs sm:text-sm md:text-sm text-text/50 text-center">
             © {new Date().getFullYear()} cher1shRXD. All rights reserved.
           </p>
