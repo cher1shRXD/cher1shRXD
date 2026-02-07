@@ -72,7 +72,7 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSlogans />
-      <section className="w-full xl:h-[200vh] xl:pt-32 pb-16 flex items-start justify-center">
+      <section className="w-full xl:h-screen xl:pt-32 pb-16 flex items-start justify-center">
         <Intro />
       </section>
       <ValuesQuote personalInfo={personalInfo} />
