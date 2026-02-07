@@ -158,7 +158,7 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <BlogHeader post={properties} />
+      <BlogHeader post={properties} blockId={blockId} />
 
       <article className="w-full max-w-4xl mx-auto px-4 sm:px-6">
         <ArticleContent blocks={blocks} />

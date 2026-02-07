@@ -6,12 +6,14 @@ import A from "next/link";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import Reveal from "@/shared/ui/Reveal";
 import Github from "@/shared/icons/Github";
+import BlogStats from "./BlogStats";
 
 interface Props {
   post: BlogPost;
+  blockId: string;
 }
 
-const BlogHeader = ({ post }: Props) => {
+const BlogHeader = ({ post, blockId }: Props) => {
   const fileUrl = post.thumbnail?.files[0]?.file?.url;
   const externalUrl = post.thumbnail?.files[0]?.external?.url;
   
@@ -41,6 +43,11 @@ const BlogHeader = ({ post }: Props) => {
             <Calendar className="w-4 h-4" />
             <time>{formatDate(post.created_at.created_time)}</time>
           </div>
+          <BlogStats
+            blockId={blockId}
+            initialViews={post.views.number || 0}
+            initialLikes={post.likes.number || 0}
+          />
         </div>
       </Reveal>
 

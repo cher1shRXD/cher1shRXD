@@ -18,4 +18,6 @@ export interface BlogPost {
   slug: Number;
   name: Name;
   thumbnail: File | null;
+  views: Number;
+  likes: Number;
 }
