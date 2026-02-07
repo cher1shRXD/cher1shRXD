@@ -1,5 +1,6 @@
 import { SubmitEventHandler, useState } from "react";
 import { subscribeEmail } from "../actions/subscribe";
+import { EMAIL_REGEX } from "../constants/regex";
 
 export const useSubscribe = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ export const useSubscribe = () => {
   const handleSubmit: SubmitEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    if (!email || !email.includes("@")) {
+    if (!email.trim() || !EMAIL_REGEX.test(email)) {
       setStatus("error");
       setMessage("유효한 이메일 주소를 입력해주세요.");
       return;

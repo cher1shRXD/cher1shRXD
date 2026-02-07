@@ -1,10 +1,11 @@
 "use server";
 
 import { google } from "googleapis";
+import { EMAIL_REGEX } from "../constants/regex";
 
 export async function subscribeEmail(email: string) {
   try {
-    if (!email || !email.includes("@")) {
+    if (!email.trim() || !EMAIL_REGEX.test(email)) {
       return {
         success: false,
         error: "유효한 이메일 주소를 입력해주세요.",
