@@ -69,13 +69,13 @@ const BlogSubscribe = () => {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="px-6 py-3 bg-primary font-medium rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer text-white">
+            className="px-6 py-3 bg-primary font-medium rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer text-white text-xs md:text-sm xl:text-base">
             {status === "loading" ? (
               "구독 중..."
             ) : (
               <>
                 <Send className="w-4 h-4" />
-                <span className="text-xs md:text-sm xl:text-base">
+                <span>
                   구독하기
                 </span>
               </>
@@ -86,7 +86,7 @@ const BlogSubscribe = () => {
         {message && (
           <p
             className={`mt-4 text-sm ${
-              status === "success" ? "text-green-500" : "text-red-500"
+              status === "success" ? "text-green-500" : status === "error" ? "text-red-500" : ""
             }`}>
             {message}
           </p>

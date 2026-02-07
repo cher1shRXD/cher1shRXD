@@ -22,9 +22,19 @@ export async function subscribeEmail(email: string) {
     const sheets = google.sheets({ version: "v4", auth });
     const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
+    if (!spreadsheetId) {
+      throw new Error("GOOGLE_SHEET_ID is not configured");
+    }
+
+    const spreadsheet = await sheets.spreadsheets.get({
+      spreadsheetId,
+    });
+
+    const sheetName = spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
+
     const existingData = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: "Sheet1!A:A",
+      range: `${sheetName}!A:A`,
     });
 
     const emails = existingData.data.values?.flat() || [];
@@ -37,7 +47,7 @@ export async function subscribeEmail(email: string) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "Sheet1!A:C",
+      range: `${sheetName}!A:C`,
       valueInputOption: "RAW",
       requestBody: {
         values: [[email, new Date().toISOString(), "active"]],
