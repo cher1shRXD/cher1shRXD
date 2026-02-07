@@ -25,6 +25,16 @@ export const useFilter = (posts: ResultResponse<BlogPost>[]) => {
     return Array.from(tagSet).sort();
   }, [posts]);
 
+  const tagCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    posts.forEach((post) => {
+      post.properties.tags.multi_select.forEach((tag) => {
+        counts[tag.name] = (counts[tag.name] || 0) + 1;
+      });
+    });
+    return counts;
+  }, [posts]);
+
   const filteredPosts = useMemo(() => {
     let result = posts;
 
@@ -50,6 +60,7 @@ export const useFilter = (posts: ResultResponse<BlogPost>[]) => {
 
   return {
     tags,
+    tagCounts,
     selectedTag,
     setSelectedTag,
     searchQuery,

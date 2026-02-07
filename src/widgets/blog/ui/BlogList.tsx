@@ -15,6 +15,7 @@ interface Props {
 const BlogList = ({ posts }: Props) => {
   const {
     tags,
+    tagCounts,
     selectedTag,
     setSelectedTag,
     searchQuery,
@@ -54,6 +55,8 @@ const BlogList = ({ posts }: Props) => {
         </div>
         <BlogTagFilter
           tags={tags}
+          tagCounts={tagCounts}
+          totalCount={posts.length}
           onTagSelect={setSelectedTag}
           selectedTag={selectedTag}
         />
