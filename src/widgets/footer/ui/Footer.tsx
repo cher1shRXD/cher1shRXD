@@ -6,7 +6,7 @@ const Footer = () => {
   const personalInfo = PersonalInfoApi.getPersonalInfo();
 
   return (
-    <footer className="w-full border-t border-border mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32">
+    <footer className="w-full border-t border-border mt-16">
       <div className="w-full max-w-440 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-4 py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16">
         <div className="flex flex-col md:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20">
           <div className="flex-1 flex flex-col gap-3 sm:gap-4">

@@ -169,7 +169,9 @@ export default async function BlogPostPage({
         nextPost={nextPost || undefined}
       />
 
-      <BlogSubscribe />
+      <div className="max-w-2xl px-4 sm:px-6 mt-32 mx-auto">
+        <BlogSubscribe />
+      </div>
 
       <TableOfContents blocks={blocks} />
     </main>
