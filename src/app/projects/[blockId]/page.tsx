@@ -82,9 +82,12 @@ const getAdjacentProjects = async (currentBlockId: string) => {
 
     if (currentIndex === -1) return { prevProject: null, nextProject: null };
 
-    const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
-    const nextProject =
+    // projects는 최신 순으로 정렬되어 있음
+    // prevProject: 더 오래된 프로젝트 (currentIndex + 1)
+    // nextProject: 더 최근 프로젝트 (currentIndex - 1)
+    const prevProject =
       currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+    const nextProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
 
     return {
       prevProject: prevProject

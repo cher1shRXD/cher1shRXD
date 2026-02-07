@@ -81,9 +81,12 @@ const getAdjacentPosts = async (currentPageId: string) => {
 
     if (currentIndex === -1) return { prevPost: null, nextPost: null };
 
-    const prevPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
-    const nextPost =
+    // posts는 최신 순으로 정렬되어 있음
+    // prevPost: 더 오래된 글 (currentIndex + 1)
+    // nextPost: 더 최근 글 (currentIndex - 1)
+    const prevPost =
       currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
+    const nextPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
 
     return {
       prevPost: prevPost
