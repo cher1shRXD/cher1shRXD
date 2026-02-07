@@ -305,9 +305,9 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
     case "quote": {
       return (
         <blockquote
-          className={`p-5 bg-surface rounded-lg md:rounded-xl my-4 ml-8 text-text/70 ${colorMap[block.quote.color] || ""} wrap-break-word relative`}>
-          <span className="text-2xl md:text-4xl text-primary absolute top-1 left-1">&ldquo;</span>
-          <span className="text-2xl md:text-4xl text-primary absolute bottom-1 right-1">&rdquo;</span>
+          className={`p-8 bg-surface rounded-lg md:rounded-xl my-4 ml-8 text-text/70 ${colorMap[block.quote.color] || ""} wrap-break-word relative`}>
+          <span className="text-2xl md:text-4xl text-primary absolute top-1 left-2">&ldquo;</span>
+          <span className="text-2xl md:text-4xl text-primary absolute bottom-1 right-2">&rdquo;</span>
           <RichText richText={block.quote.rich_text} />
           {block.children && block.children.length > 0 && (
             <div className="mt-2">
