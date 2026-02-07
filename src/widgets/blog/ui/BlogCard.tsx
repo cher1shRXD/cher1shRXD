@@ -6,6 +6,7 @@ import { formatDate } from "@/shared/utils/format-date";
 import Image from "next/image";
 import { useRouter } from "@cher1shrxd/loading";
 import { Calendar } from "lucide-react";
+import BlogStats from "./BlogStats";
 
 interface Props {
   post: ResultResponse<BlogPost>;
@@ -21,7 +22,7 @@ const BlogCard = ({ post }: Props) => {
 
   const fileUrl = properties.thumbnail?.files[0]?.file?.url;
   const externalUrl = properties.thumbnail?.files[0]?.external?.url;
-  
+
   const image = fileUrl || externalUrl || null;
 
   return (
@@ -57,11 +58,16 @@ const BlogCard = ({ post }: Props) => {
           </div>
         )}
 
-        <div className="mt-auto pt-3 border-t border-border">
+        <div className="mt-auto pt-3 border-t border-border flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-1.5 text-xs text-text/60">
             <Calendar className="w-3.5 h-3.5" />
             <time>{formatDate(properties.created_at.created_time)}</time>
           </div>
+          <BlogStats
+            blockId={post.id}
+            initialLikes={properties.likes.number || 0}
+            initialViews={properties.views.number || 0}
+          />
         </div>
       </div>
     </article>

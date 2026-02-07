@@ -38,7 +38,7 @@ const BlogHeader = ({ post, blockId }: Props) => {
       </Reveal>
 
       <Reveal delay={0.2} triggerOnce>
-        <div className="flex flex-wrap items-center gap-4 text-sm text-text/60 mb-6 pb-6 border-b border-border">
+        <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-text/60 mb-6 pb-6 border-b border-border">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4" />
             <time>{formatDate(post.created_at.created_time)}</time>

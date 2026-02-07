@@ -22,81 +22,95 @@ export async function POST(reg: Request) {
 
   const PROJECT_DB_ID = process.env.PROJECT_DB_ID!;
   const BLOG_DB_ID = process.env.BLOG_DB_ID!;
-  const AWARD_DB_ID = process.env.AWARD_DB_ID!;
-  const EDUCATION_DB_ID = process.env.EDUCATION_DB_ID!;
-  const TECHSTACK_DB_ID = process.env.TECHSTACK_DB_ID!;
-  const LICENSE_DB_ID = process.env.LICENSE_DB_ID!;
-
-  const ids = [
-    PROJECT_DB_ID,
-    BLOG_DB_ID,
-    AWARD_DB_ID,
-    EDUCATION_DB_ID,
-    TECHSTACK_DB_ID,
-    LICENSE_DB_ID,
-  ];
 
   const receivedId = body.data.parent.data_source_id;
 
-  if (receivedId && ids.includes(receivedId)) {
-    const idx = ids.indexOf(receivedId);
-    switch (idx) {
-      case 0:
-        revalidatePath("/projects");
-        revalidatePath(`/projects/${body.entity.id}`);
-        fetch(`https://www.cher1shrxd.me/projects`)
-          .then(() => console.log("Projects page pre-built"))
-          .catch((error) => console.error("Error fetching projects page:", error));
-        fetch(`https://www.cher1shrxd.me/projects/${body.entity.id}`)
-          .then(() => console.log(`Project ${body.entity.id} page pre-built`))
-          .catch((error) => console.error("Error fetching project page:", error));
-        break;
-      case 1:
-        revalidatePath("/blog");
-        revalidatePath(`/blog/${body.entity.id}`);
-        fetch(`https://www.cher1shrxd.me/blog`)
-          .then(() => console.log("Blog list page pre-built"))
-          .catch((error) => console.error("Error fetching blog page:", error));
-        notion.pages.retrieve({ page_id: body.entity.id })
-          .then((page) => {
-            const typedPage = page as ResultResponse<BlogPost>;
-            const status = typedPage.properties.status.status.name;
-            const emailSent = typedPage.properties.email_sent.checkbox;
-            
-            fetch(`https://www.cher1shrxd.me/blog/${body.entity.id}`)
-              .then(() => console.log(`Blog ${body.entity.id} page pre-built`))
-              .catch((error) => console.error("Error fetching blog detail page:", error));
+  if (!receivedId) {
+    return NextResponse.json({ message: "No data_source_id" }, { status: 200 });
+  }
 
-            if (status === "Published" && !emailSent) {
-              const title = typedPage.properties.name.title[0]?.plain_text || "새 글";
-              const postUrl = `https://www.cher1shrxd.me/blog/${body.entity.id}`;
-              
-              return sendNewPostNotification(title, postUrl)
-                .then(() => {
-                  return notion.pages.update({
-                    page_id: body.entity.id,
-                    properties: {
-                      email_sent: { checkbox: true }
-                    }
-                  });
-                });
-            }
-          })
-          .then((result) => {
-            if (result) {
-              console.log("Blog notification sent and email_sent updated");
-            }
-          })
-          .catch((error) => console.error("Error processing blog notification:", error));
-        break;
-      default:
-        revalidatePath("/");
-        fetch("https://www.cher1shrxd.me/")
-          .then(() => console.log("Home page pre-built"))
-          .catch((error) => console.error("Error fetching home page:", error));
-        break;
+  try {
+    if (receivedId === BLOG_DB_ID) {
+      await handleBlogWebhook(body);
     }
+    else if (receivedId === PROJECT_DB_ID) {
+      await handleProjectWebhook(body);
+    }
+    else {
+      revalidatePath("/");
+    }
+  } catch (error) {
+    console.error("Webhook processing error:", error);
+    return NextResponse.json({ message: "Processing failed but acknowledged" }, { status: 200 });
   }
 
   return NextResponse.json({ message: "Webhook received" }, { status: 200 });
+}
+
+async function handleBlogWebhook(body: NotionWebhookEvent) {
+  revalidatePath("/blog");
+  
+  if (body.type === "page.deleted") {
+    return;
+  }
+
+  const pageId = body.entity.id;
+  revalidatePath(`/blog/${pageId}`);
+
+  try {
+    const page = await notion.pages.retrieve({ page_id: pageId }) as ResultResponse<BlogPost>;
+    const status = page.properties.status.status.name;
+    const emailSent = page.properties.email_sent.checkbox;
+
+    await Promise.all([
+      fetch("https://www.cher1shrxd.me/blog")
+        .then(() => console.log("Blog list warmed"))
+        .catch((error) => console.error("Blog list warming failed:", error)),
+      fetch(`https://www.cher1shrxd.me/blog/${pageId}`)
+        .then(() => console.log(`Blog ${pageId} warmed`))
+        .catch((error) => console.error(`Blog ${pageId} warming failed:`, error))
+    ]);
+
+    if (status === "Published" && !emailSent) {
+      const title = page.properties.name.title[0]?.plain_text || "새 글";
+      const postUrl = `https://www.cher1shrxd.me/blog/${pageId}`;
+
+      await sendNewPostNotification(title, postUrl);
+      console.log(`Email sent for blog: ${title}`);
+
+      await notion.pages.update({
+        page_id: pageId,
+        properties: {
+          email_sent: { checkbox: true }
+        }
+      });
+      console.log(`email_sent flag updated for ${pageId}`);
+    }
+  } catch (error) {
+    console.error("Blog webhook handling error:", error);
+  }
+}
+
+async function handleProjectWebhook(body: NotionWebhookEvent) {
+  revalidatePath("/projects");
+  
+  if (body.type === "page.deleted") {
+    return;
+  }
+
+  const pageId = body.entity.id;
+  revalidatePath(`/projects/${pageId}`);
+
+  try {
+    await Promise.all([
+      fetch("https://www.cher1shrxd.me/projects")
+        .then(() => console.log("Projects list warmed"))
+        .catch((error) => console.error("Projects list warming failed:", error)),
+      fetch(`https://www.cher1shrxd.me/projects/${pageId}`)
+        .then(() => console.log(`Project ${pageId} warmed`))
+        .catch((error) => console.error(`Project ${pageId} warming failed:`, error))
+    ]);
+  } catch (error) {
+    console.error("Project webhook handling error:", error);
+  }
 }

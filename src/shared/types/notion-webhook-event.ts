@@ -17,7 +17,7 @@ export interface NotionWebhookEvent {
   data: NotionPageContentUpdatedData;
 }
 
-export type NotionWebhookEventType = "page.content_updated" | "page.created";
+export type NotionWebhookEventType = "page.content_updated" | "page.created" | "page.deleted";
 
 export interface NotionWebhookAuthor {
   id: string;

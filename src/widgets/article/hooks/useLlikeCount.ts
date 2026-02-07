@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 
 export const useLikeCount = (blockId: string, initialLikes: number) => {
   const [likes, setLikes] = useState(initialLikes);
@@ -12,7 +12,8 @@ export const useLikeCount = (blockId: string, initialLikes: number) => {
     setIsLiked(likedPosts[blockId] === true);
   }, [blockId]);
 
-  const handleLike = async () => {
+  const handleLike = async (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     if (isLoading) return;
 
     setIsLoading(true);
