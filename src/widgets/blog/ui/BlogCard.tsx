@@ -6,7 +6,6 @@ import { formatDate } from "@/shared/utils/format-date";
 import Image from "next/image";
 import { useRouter } from "@cher1shrxd/loading";
 import { Calendar } from "lucide-react";
-import BlogStats from "./BlogStats";
 
 interface Props {
   post: ResultResponse<BlogPost>;
@@ -63,11 +62,6 @@ const BlogCard = ({ post }: Props) => {
             <Calendar className="w-3.5 h-3.5" />
             <time>{formatDate(properties.created_at.created_time)}</time>
           </div>
-          <BlogStats
-            blockId={post.id}
-            initialLikes={properties.likes.number || 0}
-            initialViews={properties.views.number || 0}
-          />
         </div>
       </div>
     </article>
