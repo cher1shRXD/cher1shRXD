@@ -28,7 +28,7 @@ const ProjectCard = ({ project, projectId, delay = 0 }: Props) => {
   const image = fileUrl || externalUrl || null;
 
   return (
-    <Reveal delay={delay} triggerOnce threshold={0.1}>
+    <Reveal delay={delay} triggerOnce threshold={0}>
       <div
         onClick={handleCardClick}
         className="group relative bg-surface rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden transition-all duration-300 cursor-pointer">
