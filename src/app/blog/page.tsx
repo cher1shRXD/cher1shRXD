@@ -42,7 +42,7 @@ export default async function BlogsPage() {
       <BlogList posts={posts} />
 
       <div className="max-w-2xl mt-32 mx-auto">
-        <Reveal delay={0.4} triggerOnce>
+        <Reveal delay={0.4} threshold={0} triggerOnce>
           <BlogSubscribe />
         </Reveal>
       </div>
