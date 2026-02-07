@@ -58,7 +58,7 @@ export async function sendNewPostNotification(
           <p style="color: #666; line-height: 1.6;">
             cher1shRXD 블로그에 새로운 글이 게시되었습니다. 지금 바로 읽어보세요!
           </p>
-          <a href="${postUrl}" style="display: inline-block; margin: 20px 0; padding: 12px 24px; background-color: #0070f3; color: white; text-decoration: none; border-radius: 6px;">
+          <a href="${postUrl}" style="display: inline-block; margin: 20px 0; padding: 12px 24px; background-color: #7B2CBF; color: white; text-decoration: none; border-radius: 6px;">
             글 읽으러 가기
           </a>
           <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;" />

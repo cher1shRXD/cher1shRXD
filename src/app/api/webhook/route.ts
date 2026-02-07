@@ -42,31 +42,41 @@ export async function POST(reg: Request) {
     const idx = ids.indexOf(receivedId);
     switch (idx) {
       case 0:
-        revalidatePath("/projects", "layout");
+        revalidatePath("/projects");
+        revalidatePath(`/projects/${body.entity.id}`);
+        fetch(`https://cher1shrxd.me/projects/${body.entity.id}`)
+          .catch((error) => console.error("Error fetching project page:", error));
         break;
       case 1:
-        revalidatePath("/blog", "layout");
-        console.log(body.type)
-        if (body.type === "page.created") {
-          try {
-            const page = await notion.pages.retrieve({ 
-              page_id: body.entity.id
-            }) as ResultResponse<BlogPost>;
+        revalidatePath("/blog");
+        revalidatePath(`/blog/${body.entity.id}`);
+        
+        notion.pages.retrieve({ page_id: body.entity.id })
+          .then((page) => {
+            const typedPage = page as ResultResponse<BlogPost>;
+            const status = typedPage.properties.status.status.name;
             
-            const title = page.properties.name.title[0]?.plain_text || "새 글";
-            const status = page.properties.status.status.name;
-            
-            if (status === "Published") {
+            fetch(`https://cher1shrxd.me/blog/${body.entity.id}`)
+              .catch((error) => console.error("Error fetching blog page:", error));
+
+            if (body.type === "page.created" && status === "Published") {
+              const title = typedPage.properties.name.title[0]?.plain_text || "새 글";
               const postUrl = `https://cher1shrxd.me/blog/${body.entity.id}`;
-              await sendNewPostNotification(title, postUrl);
+              
+              return sendNewPostNotification(title, postUrl);
             }
-          } catch (error) {
-            console.error("Error sending blog notification:", error);
-          }
-        }
+          })
+          .then((result) => {
+            if (result) {
+              console.log("Blog notification sent successfully");
+            }
+          })
+          .catch((error) => console.error("Error processing blog notification:", error));
         break;
       default:
-        revalidatePath("/", "layout");
+        revalidatePath("/");
+        fetch("https://cher1shrxd.me/")
+          .catch((error) => console.error("Error fetching home page:", error));
         break;
     }
   }
