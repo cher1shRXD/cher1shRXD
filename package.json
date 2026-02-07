@@ -19,7 +19,8 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-intersection-observer": "^10.0.2",
-    "react-masonry-css": "^1.0.16"
+    "react-masonry-css": "^1.0.16",
+    "resend": "^6.9.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

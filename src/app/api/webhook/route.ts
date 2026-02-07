@@ -4,6 +4,10 @@ import {
 } from "@/shared/types/notion-webhook-event";
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
+import { sendNewPostNotification } from "@/shared/libs/email";
+import { notion } from "@/shared/libs/notion";
+import { ResultResponse } from "@/shared/types/result-response";
+import { BlogPost } from "@/entities/blog/types";
 
 export async function POST(reg: Request) {
   const body = (await reg.json()) as NotionWebhookEvent | NotionWebhookVerify;
@@ -42,6 +46,24 @@ export async function POST(reg: Request) {
         break;
       case 1:
         revalidatePath("/blog", "layout");
+        console.log(body.type)
+        if (body.type === "page.content_created") {
+          try {
+            const page = await notion.pages.retrieve({ 
+              page_id: body.entity.id
+            }) as ResultResponse<BlogPost>;
+            
+            const title = page.properties.name.title[0]?.plain_text || "새 글";
+            const status = page.properties.status.status.name;
+            
+            if (status === "Published") {
+              const postUrl = `https://cher1shrxd.me/blog/${body.entity.id}`;
+              await sendNewPostNotification(title, postUrl);
+            }
+          } catch (error) {
+            console.error("Error sending blog notification:", error);
+          }
+        }
         break;
       default:
         revalidatePath("/", "layout");
