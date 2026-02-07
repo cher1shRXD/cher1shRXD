@@ -12,7 +12,7 @@ export async function POST(
     const { liked } = await req.json();
 
     const page = await notion.pages.retrieve({ page_id: blockId }) as ResultResponse<BlogPost>;
-    const currentLikes = page.properties.likes.number || 0;
+    const currentLikes = page.properties.likes?.number || 0;
     const newLikes = liked ? currentLikes + 1 : Math.max(0, currentLikes - 1);
 
     await notion.pages.update({

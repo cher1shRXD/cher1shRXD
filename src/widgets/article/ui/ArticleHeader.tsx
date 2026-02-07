@@ -64,7 +64,7 @@ const ArticleHeader = ({ project }: Props) => {
         <div className="border-t-2 border-text pt-6 mb-10">
           <div className="flex flex-col md:flex-row md:justify-between gap-6">
             <div className="space-y-3">
-              {project.teammates.number !== null && (
+              {project.teammates?.number !== null && project.teammates?.number !== undefined && (
                 <div className="flex items-baseline gap-2">
                   <span className="text-sm sm:text-base font-bold text-text min-w-20">
                     개발 인원:

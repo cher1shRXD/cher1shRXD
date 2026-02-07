@@ -24,6 +24,6 @@ export interface Project {
   deployed_url: Url | null;
   description: RichText;
   thumbnail: File| null;
-  teammates: Number;
+  teammates?: Number;
   team_structure: RichText;
 }

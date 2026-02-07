@@ -45,8 +45,8 @@ const BlogHeader = ({ post, blockId }: Props) => {
           </div>
           <BlogStats
             blockId={blockId}
-            initialViews={post.views.number || 0}
-            initialLikes={post.likes.number || 0}
+            initialViews={post.views?.number || 0}
+            initialLikes={post.likes?.number || 0}
           />
         </div>
       </Reveal>

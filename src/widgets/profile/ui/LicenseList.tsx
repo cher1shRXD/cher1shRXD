@@ -24,7 +24,7 @@ const LicenseList = ({ licenses }: Props) => {
                   {formatDate(license.issue_date.date.start)}
                 </div>
               </div>
-              {license.score.number && (
+              {license.score?.number && (
                 <div className="text-base sm:text-lg lg:text-xl font-bold text-primary">
                   {license.score.number}
                 </div>

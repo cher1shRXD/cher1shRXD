@@ -18,7 +18,7 @@ export const BlogApi = {
       },
       sorts: [
         {
-          property: "created_at",
+          property: "sort",
           direction: "descending",
         },
       ],

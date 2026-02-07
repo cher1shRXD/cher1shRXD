@@ -16,10 +16,10 @@ export interface BlogPost {
   updated_at: UpdatedAt;
   created_at: CreatedAt;
   tags: MultiSelect;
-  slug: Number;
   name: Name;
   thumbnail: File | null;
-  views: Number;
-  likes: Number;
+  views?: Number;
+  likes?: Number;
   email_sent: Checkbox;
+  sort: Number;
 }

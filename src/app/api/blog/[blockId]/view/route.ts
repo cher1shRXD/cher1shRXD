@@ -21,7 +21,7 @@ export async function POST(
     }
 
     const page = await notion.pages.retrieve({ page_id: blockId }) as ResultResponse<BlogPost>;
-    const currentViews = page.properties.views.number || 0;
+    const currentViews = page.properties.views?.number || 0;
 
     await notion.pages.update({
       page_id: blockId,
