@@ -7,6 +7,7 @@ import {
   MultiSelect,
   Number,
   File,
+  Checkbox,
 } from "@/shared/types/fields";
 
 export interface BlogPost {
@@ -20,4 +21,5 @@ export interface BlogPost {
   thumbnail: File | null;
   views: Number;
   likes: Number;
+  email_sent: Checkbox;
 }

@@ -55,20 +55,29 @@ export async function POST(reg: Request) {
           .then((page) => {
             const typedPage = page as ResultResponse<BlogPost>;
             const status = typedPage.properties.status.status.name;
+            const emailSent = typedPage.properties.email_sent.checkbox;
             
             fetch(`https://cher1shrxd.me/blog/${body.entity.id}`)
               .catch((error) => console.error("Error fetching blog page:", error));
 
-            if (body.type === "page.created" && status === "Published") {
+            if (status === "Published" && !emailSent) {
               const title = typedPage.properties.name.title[0]?.plain_text || "새 글";
               const postUrl = `https://cher1shrxd.me/blog/${body.entity.id}`;
               
-              return sendNewPostNotification(title, postUrl);
+              return sendNewPostNotification(title, postUrl)
+                .then(() => {
+                  return notion.pages.update({
+                    page_id: body.entity.id,
+                    properties: {
+                      email_sent: { checkbox: true }
+                    }
+                  });
+                });
             }
           })
           .then((result) => {
             if (result) {
-              console.log("Blog notification sent successfully");
+              console.log("Blog notification sent and email_sent updated");
             }
           })
           .catch((error) => console.error("Error processing blog notification:", error));

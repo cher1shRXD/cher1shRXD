@@ -105,3 +105,9 @@ export interface Name {
   type: string;
   title: Text[];
 }
+
+export interface Checkbox {
+  id: string;
+  type: string;
+  checkbox: boolean;
+}
