@@ -4,6 +4,7 @@ import BlogHeader from "@/widgets/blog/ui/BlogHeader";
 import ArticleContent from "@/widgets/article/ui/ArticleContent";
 import TableOfContents from "@/widgets/article/ui/TableOfContents";
 import BlogNavigation from "@/widgets/blog/ui/BlogNavigation";
+import BlogSubscribe from "@/widgets/blog/ui/BlogSubscribe";
 import { Metadata } from "next";
 import Script from "next/script";
 
@@ -80,10 +81,6 @@ const getAdjacentPosts = async (currentPageId: string) => {
     const currentIndex = posts.findIndex((p) => p.id === currentPageId);
 
     if (currentIndex === -1) return { prevPost: null, nextPost: null };
-
-    // posts는 최신 순으로 정렬되어 있음
-    // prevPost: 더 오래된 글 (currentIndex + 1)
-    // nextPost: 더 최근 글 (currentIndex - 1)
     const prevPost =
       currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
     const nextPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
@@ -171,6 +168,8 @@ export default async function BlogPostPage({
         prevPost={prevPost || undefined}
         nextPost={nextPost || undefined}
       />
+
+      <BlogSubscribe />
 
       <TableOfContents blocks={blocks} />
     </main>
