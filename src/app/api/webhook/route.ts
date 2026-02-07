@@ -44,25 +44,32 @@ export async function POST(reg: Request) {
       case 0:
         revalidatePath("/projects");
         revalidatePath(`/projects/${body.entity.id}`);
-        fetch(`https://cher1shrxd.me/projects/${body.entity.id}`)
+        fetch(`https://www.cher1shrxd.me/projects`)
+          .then(() => console.log("Projects page pre-built"))
+          .catch((error) => console.error("Error fetching projects page:", error));
+        fetch(`https://www.cher1shrxd.me/projects/${body.entity.id}`)
+          .then(() => console.log(`Project ${body.entity.id} page pre-built`))
           .catch((error) => console.error("Error fetching project page:", error));
         break;
       case 1:
         revalidatePath("/blog");
         revalidatePath(`/blog/${body.entity.id}`);
-        
+        fetch(`https://www.cher1shrxd.me/blog`)
+          .then(() => console.log("Blog list page pre-built"))
+          .catch((error) => console.error("Error fetching blog page:", error));
         notion.pages.retrieve({ page_id: body.entity.id })
           .then((page) => {
             const typedPage = page as ResultResponse<BlogPost>;
             const status = typedPage.properties.status.status.name;
             const emailSent = typedPage.properties.email_sent.checkbox;
             
-            fetch(`https://cher1shrxd.me/blog/${body.entity.id}`)
-              .catch((error) => console.error("Error fetching blog page:", error));
+            fetch(`https://www.cher1shrxd.me/blog/${body.entity.id}`)
+              .then(() => console.log(`Blog ${body.entity.id} page pre-built`))
+              .catch((error) => console.error("Error fetching blog detail page:", error));
 
             if (status === "Published" && !emailSent) {
               const title = typedPage.properties.name.title[0]?.plain_text || "새 글";
-              const postUrl = `https://cher1shrxd.me/blog/${body.entity.id}`;
+              const postUrl = `https://www.cher1shrxd.me/blog/${body.entity.id}`;
               
               return sendNewPostNotification(title, postUrl)
                 .then(() => {
@@ -84,7 +91,8 @@ export async function POST(reg: Request) {
         break;
       default:
         revalidatePath("/");
-        fetch("https://cher1shrxd.me/")
+        fetch("https://www.cher1shrxd.me/")
+          .then(() => console.log("Home page pre-built"))
           .catch((error) => console.error("Error fetching home page:", error));
         break;
     }
