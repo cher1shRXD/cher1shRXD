@@ -1,7 +1,5 @@
 export const formatDate = (dateString: string, cut?: number): string => {
-  console.log(dateString);
   const hasTime = dateString.includes("T");
-  console.log("hasTime:", hasTime);
   let timeString = "";
 
   if (hasTime) {
