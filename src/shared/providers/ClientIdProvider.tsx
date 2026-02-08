@@ -6,7 +6,7 @@ import { registerCookie } from "../actions/register-cookie";
 export default function ClientIdProvider() {
   const getClientId = async () => {
     const clientId = await registerCookie();
-    
+    if (!clientId) return;
     await fetch("/api/client/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
