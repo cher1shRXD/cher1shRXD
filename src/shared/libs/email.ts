@@ -1,5 +1,6 @@
-import { google } from "googleapis";
 import { Resend } from "resend";
+
+import { getActiveSubscribers } from "./subscriber";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -8,47 +9,14 @@ export async function sendNewPostNotification(
   postUrl: string
 ) {
   try {
-    const auth = new google.auth.GoogleAuth({
-      credentials: {
-        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      },
-      scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
-    });
-
-    const sheets = google.sheets({ version: "v4", auth });
-    const spreadsheetId = process.env.GOOGLE_SHEET_ID;
-
-    if (!spreadsheetId) {
-      console.error("GOOGLE_SHEET_ID is not configured");
-      return;
-    }
-
-    const spreadsheet = await sheets.spreadsheets.get({
-      spreadsheetId,
-    });
-
-    const sheetName = spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
-
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId,
-      range: `${sheetName}!A:C`,
-    });
-
-    const rows = response.data.values || [];
-    
-    const subscribers = rows
-      .slice(1)
-      .filter((row) => row[2] === "active")
-      .map((row) => row[0]);
-
+    const subscribers = await getActiveSubscribers();
     if (subscribers.length === 0) {
       console.log("No active subscribers found");
       return;
     }
 
     const { data, error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM || "blog@cher1shrxd.me",
+      from: process.env.EMAIL_FROM!,
       to: subscribers,
       subject: `새로운 글이 올라왔어요: ${postTitle}`,
       html: `

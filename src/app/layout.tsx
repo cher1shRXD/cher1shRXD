@@ -7,6 +7,7 @@ import Footer from "@/widgets/footer/ui/Footer";
 import LenisProvider from "@/shared/providers/LenisProvider";
 import Script from "next/script";
 import InitScrollProvider from "@/shared/providers/InitScrollProvider";
+import ClientIdProvider from "@/shared/providers/ClientIdProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cher1shrxd.me"),
@@ -93,6 +94,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-background text-text pt-20">
+        <ClientIdProvider />
         <Script
           id="gtm-script"
           strategy="afterInteractive"

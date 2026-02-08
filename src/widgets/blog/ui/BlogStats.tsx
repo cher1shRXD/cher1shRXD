@@ -1,21 +1,16 @@
 "use client";
 
 import { Eye, Heart } from "lucide-react";
-import { useViewCount } from "@/widgets/article/hooks/useViewCount";
-import { useLikeCount } from "@/widgets/article/hooks/useLlikeCount";
+import { useViewCount } from "@/widgets/blog/hooks/useViewCount";
+import { useLikeCount } from "@/widgets/blog/hooks/useLlikeCount";
 
 interface Props {
   blockId: string;
-  initialViews: number;
-  initialLikes: number;
 }
 
-const BlogStats = ({ blockId, initialViews, initialLikes }: Props) => {
-  const views = useViewCount(blockId, initialViews);
-  const { likes, isLiked, isLoading, handleLike } = useLikeCount(
-    blockId,
-    initialLikes
-  );
+const BlogStats = ({ blockId }: Props) => {
+  const views = useViewCount(blockId);
+  const { likes, isLiked, isLoading, handleLike } = useLikeCount(blockId);
 
   return (
     <div className="flex items-center gap-3">
@@ -34,9 +29,7 @@ const BlogStats = ({ blockId, initialViews, initialLikes }: Props) => {
         } ${isLoading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
         aria-label={isLiked ? "좋아요 취소" : "좋아요"}>
         <Heart
-          className={`w-4 h-4 transition-all ${
-            isLiked ? "fill-current" : ""
-          }`}
+          className={`w-4 h-4 transition-all ${isLiked ? "fill-current" : ""}`}
         />
         <span className="text-xs sm:text-sm">{likes.toLocaleString()}</span>
       </button>

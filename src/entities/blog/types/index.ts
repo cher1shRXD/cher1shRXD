@@ -18,8 +18,6 @@ export interface BlogPost {
   tags: MultiSelect;
   name: Name;
   thumbnail: File | null;
-  views?: Number;
-  likes?: Number;
   email_sent: Checkbox;
   sort: Number;
 }

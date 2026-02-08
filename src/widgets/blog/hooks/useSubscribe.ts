@@ -1,6 +1,6 @@
 import { SubmitEventHandler, useState } from "react";
-import { subscribeEmail } from "../actions/subscribe";
 import { EMAIL_REGEX } from "../constants/regex";
+import { BlogApi } from "@/entities/blog/api";
 
 export const useSubscribe = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +21,7 @@ export const useSubscribe = () => {
     setStatus("loading");
 
     try {
-      const result = await subscribeEmail(email);
+      const result = await BlogApi.subscribeEmail(email);
 
       if (result.success) {
         setStatus("success");
