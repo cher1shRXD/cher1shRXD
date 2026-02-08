@@ -34,12 +34,10 @@ export const useLikeCount = (blockId: string) => {
     setIsLiked(newLikedState);
     setLikes(newLikedState ? likes + 1 : Math.max(0, likes - 1));
     try {
-      const res = await BlogApi.like(
+      const data = await BlogApi.like(
         blockId,
         newLikedState ? "like" : "unlike",
       );
-      if (!res.ok) throw new Error("Failed to update like");
-      const data = await res.json();
       if (typeof data.likes === "number") setLikes(data.likes);
       if (typeof data.liked === "boolean") setIsLiked(data.liked);
     } catch {
