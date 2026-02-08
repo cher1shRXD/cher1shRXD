@@ -2,8 +2,6 @@ import { BlogApi } from "@/entities/blog/api";
 import { MouseEvent, useEffect, useState } from "react";
 
 export const useLikeCount = (blockId: string) => {
-  console.log("useLikeCount blockId:", blockId);
-
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

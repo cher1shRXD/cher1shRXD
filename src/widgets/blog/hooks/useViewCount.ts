@@ -2,8 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { BlogApi } from "@/entities/blog/api";
 
 export const useViewCount = (blockId: string | null | undefined) => {
-  console.log("useViewCount blockId:", blockId);
-
   const [views, setViews] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const requestedRef = useRef<string | null>(null);
@@ -19,8 +17,8 @@ export const useViewCount = (blockId: string | null | undefined) => {
         if (typeof data.views === "number") {
           setViews(data.views);
         }
-      } catch (error) {
-        console.error("Failed to increment view:", error);
+      } catch {
+        // ignore
       } finally {
         setIsLoading(false);
       }
