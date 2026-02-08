@@ -14,7 +14,8 @@ export async function registerCookie() {
     cookieStore.set({
       name: CLIENT_ID_COOKIE,
       value: clientId,
-      maxAge: COOKIE_MAX_AGE
+      maxAge: COOKIE_MAX_AGE,
+      domain: ".cher1shrxd.me",
     });
   }
   return clientId;
