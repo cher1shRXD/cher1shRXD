@@ -1,12 +1,12 @@
 "use client";
 
 import BlogCard from "@/widgets/blog/ui/BlogCard";
-import ProjectsGrid from "@/widgets/projects/ui/ProjectsGrid";
 import { ResultResponse } from "@/shared/types/result-response";
 import { BlogPost } from "@/entities/blog/types";
 import { Project } from "@/entities/project/types";
 import Reveal from "@/shared/ui/Reveal";
 import { Link } from "@cher1shrxd/loading";
+import ProjectCard from "@/widgets/projects/ui/ProjectCard";
 
 interface Props {
   blogs: ResultResponse<BlogPost>[];
@@ -49,10 +49,18 @@ const HomeContent = ({ blogs, projects }: Props) => {
             </Link>
           </div>
         </Reveal>
-        <ProjectsGrid projects={projects} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project.properties}
+              projectId={project.id}
+            />
+          ))}
+        </div>
       </section>
     </>
   );
-}
+};
 
 export default HomeContent;

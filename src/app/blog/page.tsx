@@ -1,6 +1,6 @@
 import { BlogApi } from "@/entities/blog/api";
 import Reveal from "@/shared/ui/Reveal";
-import BlogList from "@/widgets/blog/ui/BlogList";
+import BlogGrid from "@/widgets/blog/ui/BlogGrid";
 import BlogSubscribe from "@/widgets/blog/ui/BlogSubscribe";
 import { Metadata } from "next";
 
@@ -39,7 +39,7 @@ export default async function BlogsPage() {
         </p>
       </Reveal>
 
-      <BlogList posts={posts} />
+      <BlogGrid posts={posts} />
 
       <div className="max-w-2xl mt-32 mx-auto">
         <Reveal delay={0.4} threshold={0} triggerOnce>

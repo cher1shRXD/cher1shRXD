@@ -7,21 +7,30 @@ import BlogTagFilter from "./BlogTagFilter";
 import Reveal from "@/shared/ui/Reveal";
 import { Search } from "lucide-react";
 import { useFilter } from "../hooks/useFilter";
+import Masonry from "react-masonry-css";
 
 interface Props {
   posts: ResultResponse<BlogPost>[];
 }
 
-const BlogList = ({ posts }: Props) => {
+const BlogGrid = ({ posts }: Props) => {
   const {
     tags,
     tagCounts,
     selectedTag,
     setSelectedTag,
     searchQuery,
-    setSearchQuery,
     filteredPosts,
+    setSearchQuery,
   } = useFilter(posts);
+
+  const breakpointColumnsObj = {
+    default: 4,
+    1280: 3,
+    1024: 2,
+    768: 2,
+    640: 1,
+  };
 
   if (posts.length === 0) {
     return (
@@ -61,26 +70,20 @@ const BlogList = ({ posts }: Props) => {
           selectedTag={selectedTag}
         />
       </div>
-
-      {filteredPosts.length === 0 ? (
-        <div className="text-center py-20">
-          <p className="text-text/60 text-lg">검색 결과가 없습니다.</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
-          {filteredPosts.map((post, index) => (
-            <Reveal
-              key={post.id}
-              delay={index * 0.05}
-              threshold={0}
-              triggerOnce>
+      <Reveal threshold={0} delay={0.4} triggerOnce>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="flex -ml-4 sm:-ml-5 md:-ml-6 lg:-ml-7 xl:-ml-8 w-auto"
+          columnClassName="pl-4 sm:pl-5 md:pl-6 lg:pl-7 xl:pl-8 bg-clip-padding">
+          {filteredPosts.map((post) => (
+            <div key={post.id} className="mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
               <BlogCard post={post} />
-            </Reveal>
+            </div>
           ))}
-        </div>
-      )}
+        </Masonry>
+      </Reveal>
     </div>
   );
 };
 
-export default BlogList;
+export default BlogGrid;
