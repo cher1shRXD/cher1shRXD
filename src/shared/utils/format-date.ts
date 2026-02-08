@@ -1,9 +1,10 @@
 export const formatDate = (dateString: string, cut?: number): string => {
-  let hasTime = false;
+  console.log(dateString);
+  const hasTime = dateString.includes("T");
+  console.log("hasTime:", hasTime);
   let timeString = "";
 
-  if (dateString.includes("T")) {
-    hasTime = true;
+  if (hasTime) {
     const utcDate = new Date(dateString);
     const kstString = utcDate.toLocaleString("ko-KR", {
       timeZone: "Asia/Seoul",
@@ -13,12 +14,13 @@ export const formatDate = (dateString: string, cut?: number): string => {
       hour: "2-digit",
       minute: "2-digit",
     });
-    const [datePart, timePart] = kstString.split(" ");
-    const [year, month, day] = datePart.replace(/\./g, "").split(" ");
+    const [year, month, day, meridiem, timePart] = kstString
+      .replaceAll(".", "")
+      .split(" ");
     const monthNum = String(Number(month));
     const dayNum = String(Number(day));
-    timeString = timePart;
-    dateString = `${year}년 ${monthNum}월 ${dayNum}일`;
+    timeString = `${meridiem} ${timePart}`;
+    return `${year}년 ${monthNum}월 ${dayNum}일 ${timeString}`;
   }
 
   const tokens = dateString.split("-");
@@ -35,6 +37,5 @@ export const formatDate = (dateString: string, cut?: number): string => {
       return `${year}년`;
   }
 
-  const dateStr = `${year}년 ${Number(month)}월 ${Number(day)}일`;
-  return hasTime ? `${dateStr} ${timeString}` : dateStr;
+  return `${year}년 ${Number(month)}월 ${Number(day)}일`;
 };
