@@ -16,7 +16,7 @@ export const BlogApi = {
   async getLikeStatus(blockId: string) {
     const res = await fetch(`/api/blog/${blockId}/like`, { method: "GET" });
     if (!res.ok) throw new Error("Failed to fetch like status");
-    return res.json();
+    return await res.json();
   },
 
   async like(blockId: string, action: "like" | "unlike") {
@@ -26,7 +26,7 @@ export const BlogApi = {
       body: JSON.stringify({ action }),
     });
     if (!res.ok) throw new Error("Failed to update like");
-    return res.json();
+    return await res.json();
   },
 
   async getPosts(size?: number) {

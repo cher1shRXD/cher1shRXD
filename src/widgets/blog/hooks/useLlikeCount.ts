@@ -1,23 +1,24 @@
+import { BlogApi } from "@/entities/blog/api";
 import { MouseEvent, useEffect, useState } from "react";
 
 export const useLikeCount = (blockId: string) => {
+  console.log("useLikeCount blockId:", blockId);
+
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchLikeStatus = async () => {
+      setIsLoading(true);
       try {
-        const res = await fetch(`/api/blog/${blockId}/like`, {
-          method: "GET",
-        });
-        if (res.ok) {
-          const data = await res.json();
-          if (typeof data.likes === "number") setLikes(data.likes);
-          if (typeof data.liked === "boolean") setIsLiked(data.liked);
-        }
+        const data = await BlogApi.getLikeStatus(blockId);
+        if (typeof data.likes === "number") setLikes(data.likes);
+        if (typeof data.liked === "boolean") setIsLiked(data.liked);
       } catch {
         // ignore
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchLikeStatus();
@@ -33,11 +34,10 @@ export const useLikeCount = (blockId: string) => {
     setIsLiked(newLikedState);
     setLikes(newLikedState ? likes + 1 : Math.max(0, likes - 1));
     try {
-      const res = await fetch(`/api/blog/${blockId}/like`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: newLikedState ? "like" : "unlike" }),
-      });
+      const res = await BlogApi.like(
+        blockId,
+        newLikedState ? "like" : "unlike",
+      );
       if (!res.ok) throw new Error("Failed to update like");
       const data = await res.json();
       if (typeof data.likes === "number") setLikes(data.likes);
@@ -45,8 +45,9 @@ export const useLikeCount = (blockId: string) => {
     } catch {
       setIsLiked(previousLikedState);
       setLikes(previousLikes);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   return { likes, isLiked, isLoading, handleLike };
