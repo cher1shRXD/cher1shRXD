@@ -7,17 +7,17 @@ import { Metadata } from "next";
 export const revalidate = 31536000;
 
 export const metadata: Metadata = {
-  title: "Blog | cher1shRXD",
+  title: "cher1shRXD's Blog",
   description: "개발 과정에서의 인사이트와 학습 내용을 공유합니다",
   openGraph: {
-    title: "Blog | cher1shRXD",
+    title: "cher1shRXD's Blog",
     description: "개발 과정에서의 인사이트와 학습 내용을 공유합니다",
     type: "website",
     url: "https://cher1shrxd.me/blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | cher1shRXD",
+    title: "cher1shRXD's Blog",
     description: "개발 과정에서의 인사이트와 학습 내용을 공유합니다",
   },
 };
@@ -29,7 +29,7 @@ export default async function BlogsPage() {
     <section className="w-full max-w-440 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-4 pt-8 pb-4 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16">
       <Reveal triggerOnce>
         <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold font-playpen tracking-widest mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
-          BLOG.
+          cher1shRXD&rsquo;s Blog
         </h1>
       </Reveal>
 

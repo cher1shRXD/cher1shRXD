@@ -6,17 +6,17 @@ import { Metadata } from "next";
 export const revalidate = 31536000;
 
 export const metadata: Metadata = {
-  title: "Projects | cher1shRXD",
+  title: "cher1shRXD's Projects",
   description: "진행했던 프로젝트들을 확인하세요",
   openGraph: {
-    title: "Projects | cher1shRXD",
+    title: "cher1shRXD's Projects",
     description: "진행했던 프로젝트들을 확인하세요",
     type: "website",
     url: "https://cher1shrxd.me/projects",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Projects | cher1shRXD",
+    title: "cher1shRXD's Projects",
     description: "진행했던 프로젝트들을 확인하세요",
   },
 };
@@ -28,7 +28,7 @@ export default async function ProjectsPage() {
     <section className="w-full max-w-440 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-4 py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16">
       <Reveal triggerOnce>
         <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold font-playpen tracking-widest mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
-          PROJECTS.
+          cher1shRXD&rsquo;s Projects
         </h1>
       </Reveal>
 

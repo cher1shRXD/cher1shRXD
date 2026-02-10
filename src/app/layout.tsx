@@ -11,11 +11,9 @@ import ClientIdProvider from "@/shared/providers/ClientIdProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cher1shrxd.me"),
-  title: {
-    default: "cher1shRXD's Portfolio | 김태우",
-    template: "%s | cher1shRXD",
-  },
-  description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다. 프론트엔드 개발자로서 사용자 경험과 코드 품질을 중요하게 생각합니다.",
+  title: "cher1shRXD's Portfolio",
+  description:
+    "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다. 프론트엔드 개발자로서 사용자 경험과 코드 품질을 중요하게 생각합니다.",
   keywords: [
     "cher1shRXD",
     "김태우",
@@ -42,7 +40,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: "https://cher1shrxd.me",
     siteName: "cher1shRXD's Portfolio",
-    title: "cher1shRXD's Portfolio | 김태우",
+    title: "cher1shRXD's Portfolio",
     description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다.",
     images: [
       {
@@ -55,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "cher1shRXD's Portfolio | 김태우",
+    title: "cher1shRXD's Portfolio",
     description: "다음 사람이 망설이지 않는 코드를 쓰는 개발자, 김태우입니다.",
     creator: "@cher1shRXD",
     images: ["/og-image.png"],
