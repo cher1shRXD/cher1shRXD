@@ -84,6 +84,7 @@ export default function RootLayout({
       <head>
         <ThemeSetter />
         <meta name="google-adsense-account" content="ca-pub-6661151683803615" />
+        <meta name="naver-site-verification" content="ced440ec8c96fd33a0835e1b867f1174e1127659" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6661151683803615"
