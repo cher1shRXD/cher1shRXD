@@ -41,7 +41,7 @@ const ProjectCard = ({ project, projectId }: Props) => {
         </div>
       )}
 
-      <div className="p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 flex flex-col gap-3 sm:gap-4 md:gap-5">
+      <div className="p-4 flex flex-col gap-3 sm:gap-4 md:gap-5">
         <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
           <span
             className={`text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 rounded-full ${project.is_deployed.status.name === "Deployed" ? "bg-green-500/20 text-green-500" : "bg-red-500/20 text-red-500"} font-medium`}>
