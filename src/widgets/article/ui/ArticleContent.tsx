@@ -4,7 +4,6 @@ import {
   BlockObjectResponse,
   RichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -66,12 +65,14 @@ const RichText = ({ richText }: { richText: RichTextItemResponse[] }) => {
             className += ` ${colorMap[annotations.color] || ""}`;
           }
 
-          const textContent = text.text.content.split('\n').map((line, i, arr) => (
-            <span key={i}>
-              {line}
-              {i < arr.length - 1 && <br />}
-            </span>
-          ));
+          const textContent = text.text.content
+            .split("\n")
+            .map((line, i, arr) => (
+              <span key={i}>
+                {line}
+                {i < arr.length - 1 && <br />}
+              </span>
+            ));
 
           const content = text.text.link ? (
             <Link
@@ -233,7 +234,7 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
     }
 
     case "heading_3": {
-      return (  
+      return (
         <div
           id={block.id}
           className="flex items-stretch gap-3 my-2 scroll-mt-24 pl-4">
@@ -306,8 +307,12 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
       return (
         <blockquote
           className={`p-6.5 bg-surface rounded-lg md:rounded-xl my-4 ml-8 text-text/70 ${colorMap[block.quote.color] || ""} wrap-break-word relative`}>
-          <span className="text-2xl md:text-4xl text-primary h-5 absolute top-2.5 left-2.5">&ldquo;</span>
-          <span className="text-2xl md:text-4xl text-primary h-5 absolute bottom-2.5 right-2.5">&rdquo;</span>
+          <span className="text-2xl md:text-4xl text-primary h-5 absolute top-2.5 left-2.5">
+            &ldquo;
+          </span>
+          <span className="text-2xl md:text-4xl text-primary h-5 absolute bottom-2.5 right-2.5">
+            &rdquo;
+          </span>
           <RichText richText={block.quote.rich_text} />
           {block.children && block.children.length > 0 && (
             <div className="mt-2">
@@ -348,18 +353,15 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
 
       return (
         <figure className="my-2 pl-8">
-          <div className="relative w-full overflow-hidden rounded-lg border border-border bg-surface/30">
-            <Image
+          <div className="overflow-hidden rounded-lg border border-border bg-surface/30 inline-block max-w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={imageUrl}
               alt={
                 block.image.caption?.map((c) => c.plain_text).join("") ||
                 "Image"
               }
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-full h-auto"
-              unoptimized
+              style={{ maxWidth: "100%", height: "auto", display: "block" }}
             />
           </div>
           {block.image.caption && block.image.caption.length > 0 && (
@@ -402,7 +404,9 @@ const BlockRenderer = ({ block }: { block: NotionBlockWithChildren }) => {
 
       return (
         <div className="pl-8">
-          <video controls className="w-full my-8 rounded-xl border border-border">
+          <video
+            controls
+            className="w-full my-8 rounded-xl border border-border">
             <source src={videoUrl} />
           </video>
         </div>
