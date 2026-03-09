@@ -29,18 +29,6 @@ const ProjectCard = ({ project, projectId }: Props) => {
     <div
       onClick={handleCardClick}
       className="group relative bg-surface rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden transition-all duration-300 cursor-pointer">
-      {project.thumbnail && image && (
-        <div className="relative w-full h-40 sm:h-48 md:h-52 lg:h-56 xl:h-60 overflow-hidden bg-surface/50">
-          <Image
-            src={image}
-            alt={project.name.title[0].plain_text}
-            fill
-            unoptimized
-            className="object-contain group-hover:scale-105 transition-transform duration-500"
-          />
-        </div>
-      )}
-
       <div className="p-4 flex flex-col gap-3 sm:gap-4 md:gap-5">
         <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
           <span
@@ -49,7 +37,18 @@ const ProjectCard = ({ project, projectId }: Props) => {
           </span>
         </div>
 
-        <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold">
+        <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold flex items-center gap-2.5">
+          {image && (
+            <span className="relative shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-md overflow-hidden bg-surface/50">
+              <Image
+                src={image}
+                alt={project.name.title[0].plain_text}
+                fill
+                unoptimized
+                className="object-contain"
+              />
+            </span>
+          )}
           {project.name.title[0].plain_text}
         </h3>
 
