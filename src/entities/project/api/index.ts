@@ -18,7 +18,7 @@ export const ProjectApi = {
       },
       sorts: [
         {
-          property: "created_at",
+          property: "slug",
           direction: "descending",
         },
       ],
