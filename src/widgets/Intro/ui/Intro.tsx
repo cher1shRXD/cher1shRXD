@@ -4,7 +4,7 @@ import { useTyping } from "../hooks/useTyping";
 import { useInView } from "react-intersection-observer";
 
 const Intro = () => {
-  const text = "다음 사람이\n망설이지 않는 코드를 쓰는\n개발자, 김태우입니다.";
+  const text = "기술보다\n문제를 먼저 바라보는 개발자,\n 김태우입니다.";
   const { ref, inView } = useInView({
     threshold: 1,
   });
