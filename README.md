@@ -68,6 +68,23 @@
 
 <br/>
 
+## 활동
+
+<a href="https://github.com/cher1shRXD">
+  <img src="https://github-readme-stats.vercel.app/api?username=cher1shRXD&show_icons=true&hide_border=true&include_all_commits=true&bg_color=FFFFFF&title_color=3FC58C&icon_color=3FC58C&text_color=333333&ring_color=3FC58C" height="170" />
+</a>
+<a href="https://github.com/cher1shRXD">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cher1shRXD&layout=compact&hide_border=true&langs_count=8&bg_color=FFFFFF&title_color=3FC58C&text_color=333333" height="170" />
+</a>
+
+<br/>
+
+<a href="https://github.com/cher1shRXD">
+  <img src="https://streak-stats.demolab.com/?user=cher1shRXD&hide_border=true&background=FFFFFF&stroke=3FC58C&ring=3FC58C&fire=3FC58C&currStreakLabel=3FC58C&sideNums=333333&currStreakNum=333333&dates=333333&sideLabels=333333" height="170" />
+</a>
+
+<br/>
+
 ## 연락처
 
 - **Portfolio** · [www.cher1shrxd.me](https://www.cher1shrxd.me)
