@@ -30,18 +30,24 @@ export async function POST(reg: Request) {
   }
 
   try {
-    if (receivedId === BLOG_DB_ID) {
-      await handleBlogWebhook(body);
-    }
-    else if (receivedId === PROJECT_DB_ID) {
-      await handleProjectWebhook(body);
-    }
-    else {
-      revalidatePath("/");
+    revalidatePath("/");
+    fetch("https://www.cher1shrxd.me")
+      .then(() => console.log("Main Page warmed"))
+      .catch((error) => console.error("Blog list warming failed:", error));
+    switch (receivedId) {
+      case BLOG_DB_ID:
+        await handleBlogWebhook(body);
+        break;
+      case PROJECT_DB_ID:
+        await handleProjectWebhook(body);
+        break;
     }
   } catch (error) {
     console.error("Webhook processing error:", error);
-    return NextResponse.json({ message: "Processing failed but acknowledged" }, { status: 200 });
+    return NextResponse.json(
+      { message: "Processing failed but acknowledged" },
+      { status: 200 },
+    );
   }
 
   return NextResponse.json({ message: "Webhook received" }, { status: 200 });
@@ -49,7 +55,7 @@ export async function POST(reg: Request) {
 
 async function handleBlogWebhook(body: NotionWebhookEvent) {
   revalidatePath("/blog");
-  
+
   if (body.type === "page.deleted") {
     return;
   }
@@ -58,7 +64,9 @@ async function handleBlogWebhook(body: NotionWebhookEvent) {
   revalidatePath(`/blog/${pageId}`);
 
   try {
-    const page = await notion.pages.retrieve({ page_id: pageId }) as ResultResponse<BlogPost>;
+    const page = (await notion.pages.retrieve({
+      page_id: pageId,
+    })) as ResultResponse<BlogPost>;
     const status = page.properties.status.status.name;
     const emailSent = page.properties.email_sent.checkbox;
 
@@ -68,7 +76,9 @@ async function handleBlogWebhook(body: NotionWebhookEvent) {
         .catch((error) => console.error("Blog list warming failed:", error)),
       fetch(`https://www.cher1shrxd.me/blog/${pageId}`)
         .then(() => console.log(`Blog ${pageId} warmed`))
-        .catch((error) => console.error(`Blog ${pageId} warming failed:`, error))
+        .catch((error) =>
+          console.error(`Blog ${pageId} warming failed:`, error),
+        ),
     ]);
 
     if (status === "Published" && !emailSent) {
@@ -81,8 +91,8 @@ async function handleBlogWebhook(body: NotionWebhookEvent) {
       await notion.pages.update({
         page_id: pageId,
         properties: {
-          email_sent: { checkbox: true }
-        }
+          email_sent: { checkbox: true },
+        },
       });
       console.log(`email_sent flag updated for ${pageId}`);
     }
@@ -93,7 +103,7 @@ async function handleBlogWebhook(body: NotionWebhookEvent) {
 
 async function handleProjectWebhook(body: NotionWebhookEvent) {
   revalidatePath("/projects");
-  
+
   if (body.type === "page.deleted") {
     return;
   }
@@ -105,10 +115,14 @@ async function handleProjectWebhook(body: NotionWebhookEvent) {
     await Promise.all([
       fetch("https://www.cher1shrxd.me/projects")
         .then(() => console.log("Projects list warmed"))
-        .catch((error) => console.error("Projects list warming failed:", error)),
+        .catch((error) =>
+          console.error("Projects list warming failed:", error),
+        ),
       fetch(`https://www.cher1shrxd.me/projects/${pageId}`)
         .then(() => console.log(`Project ${pageId} warmed`))
-        .catch((error) => console.error(`Project ${pageId} warming failed:`, error))
+        .catch((error) =>
+          console.error(`Project ${pageId} warming failed:`, error),
+        ),
     ]);
   } catch (error) {
     console.error("Project webhook handling error:", error);
