@@ -1,231 +1,92 @@
-# 🌟 Welcome to cher1shRXD's Universe
+# 김태우
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=280&section=header&text=cher1shRXD&fontSize=80&fontColor=fff&animation=fadeIn&fontAlignY=35" />
-</div>
+**Frontend Developer** · `@cher1shRXD`
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Frontend+Developer+%F0%9F%9A%80;Building+Amazing+Web+Experiences+%E2%9C%A8;Always+Learning+New+Technologies+%F0%9F%93%9A" alt="Typing SVG" />
-</div>
+![PLATFORM ENGINEERING](https://img.shields.io/badge/PLATFORM__ENGINEERING-3FC58C?style=flat-square&labelColor=3FC58C)
+![HARMONIZING WITH AI](https://img.shields.io/badge/HARMONIZING__WITH__AI-3FC58C?style=flat-square&labelColor=3FC58C)
+![FULLSTACK ORIENTED](https://img.shields.io/badge/FULLSTACK__ORIENTED-3FC58C?style=flat-square&labelColor=3FC58C)
 
----
+> 기술보다 **문제를 먼저 바라보는** 개발자
 
-## 🎨 **Frontend Arsenal**
+<br/>
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=html" width="48" height="48" alt="HTML5" /></a>
-        <br>HTML5
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=css" width="48" height="48" alt="CSS3" /></a>
-        <br>CSS3
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=bootstrap" width="48" height="48" alt="Bootstrap" /></a>
-        <br>Bootstrap
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=tailwind" width="48" height="48" alt="Tailwind" /></a>
-        <br>Tailwind
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=js" width="48" height="48" alt="JavaScript" /></a>
-        <br>JavaScript
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=ts" width="48" height="48" alt="TypeScript" /></a>
-        <br>TypeScript
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=jquery" width="48" height="48" alt="jQuery" /></a>
-        <br>jQuery
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" /></a>
-        <br>React
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="Next.js" /></a>
-        <br>Next.js
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=styledcomponents" width="48" height="48" alt="Styled Components" /></a>
-        <br>Styled Components
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=flutter" width="48" height="48" alt="Flutter" /></a>
-        <br>Flutter
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://user-images.githubusercontent.com/25181517/189716630-fe6c084c-6c66-43af-aa49-64c8aea4a5c2.png" width="48" height="48" alt="Expo" /></a>
-        <br>Expo
-      </td>
-    </tr>
-  </table>
-</div>
+## 소개
 
----
+기술은 도구일 뿐, 모든 생각은 문제 상황에서 시작합니다.
 
-## ⚡ **Backend Powerhouse**
+#### `01` 눈앞의 과제가 아닌, 전체를 이해합니다.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=nodejs" width="48" height="48" alt="Node.js" /></a>
-        <br>Node.js
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=express" width="48" height="48" alt="Express" /></a>
-        <br>Express
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=nestjs" width="48" height="48" alt="NestJS" /></a>
-        <br>NestJS
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=fastapi" width="48" height="48" alt="FastAPI" /></a>
-        <br>FastAPI
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=python" width="48" height="48" alt="Python" /></a>
-        <br>Python
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=java" width="48" height="48" alt="Java" /></a>
-        <br>Java
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=spring" width="48" height="48" alt="Spring Boot" /></a>
-        <br>Spring Boot
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=php" width="48" height="48" alt="PHP" /></a>
-        <br>PHP
-      </td>
-    </tr>
-  </table>
-</div>
+팀 전체의 비전과 미션을 이해하고 해야 할 역할을 파악해 이행합니다.
 
----
+#### `02` 설계는 탑다운, 구현은 바텀업을 지향합니다.
 
-## 🗄️ **Database & Infrastructure**
+해결 방안으로부터 제품을 설계하고, 플랫폼 엔지니어링을 통해 퀄리티의 편차를 줄입니다.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=mysql" width="48" height="48" alt="MySQL" /></a>
-        <br>MySQL
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=mongodb" width="48" height="48" alt="MongoDB" /></a>
-        <br>MongoDB
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=redis" width="48" height="48" alt="Redis" /></a>
-        <br>Redis
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=docker" width="48" height="48" alt="Docker" /></a>
-        <br>Docker
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=nginx" width="48" height="48" alt="Nginx" /></a>
-        <br>Nginx
-      </td>
-      <td align="center" width="96">
-        <a href="#"><img src="https://skillicons.dev/icons?i=linux" width="48" height="48" alt="Linux" /></a>
-        <br>Linux
-      </td>
-    </tr>
-  </table>
-</div>
+#### `03` 기술에 얽매이지 않는 개발자입니다.
 
----
+구현의 난이도보다 어떤 선택이 맞는지 먼저 판단합니다.
 
-## 📊 **GitHub Analytics**
+<br/>
 
-<div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=cher1shRXD&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cher1shRXD&layout=compact&theme=tokyonight&hide_border=true" />
-</div>
+## 기술 스택
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=cher1shRXD&theme=tokyonight&hide_border=true" />
-</div>
+**Frontend**
 
----
+![TypeScript](https://img.shields.io/badge/TypeScript-FFFFFF?style=flat-square&logo=typescript&logoColor=3178C6&labelColor=FFFFFF)
+![JavaScript](https://img.shields.io/badge/JavaScript-FFFFFF?style=flat-square&logo=javascript&logoColor=F7DF1E&labelColor=FFFFFF)
+![Next.js](https://img.shields.io/badge/Next.js-FFFFFF?style=flat-square&logo=nextdotjs&logoColor=000000&labelColor=FFFFFF)
+![React](https://img.shields.io/badge/React-FFFFFF?style=flat-square&logo=react&logoColor=61DAFB&labelColor=FFFFFF)
+![React Native](https://img.shields.io/badge/React_Native-FFFFFF?style=flat-square&logo=react&logoColor=61DAFB&labelColor=FFFFFF)
+![HTML5](https://img.shields.io/badge/HTML5-FFFFFF?style=flat-square&logo=html5&logoColor=E34F26&labelColor=FFFFFF)
+![CSS3](https://img.shields.io/badge/CSS3-FFFFFF?style=flat-square&logo=css3&logoColor=1572B6&labelColor=FFFFFF)
 
-## 🏆 **GitHub Trophies**
+**Backend**
 
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=cher1shRXD&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=7" />
-</div>
+![Node.js](https://img.shields.io/badge/Node.js-FFFFFF?style=flat-square&logo=nodedotjs&logoColor=339933&labelColor=FFFFFF)
+![Express](https://img.shields.io/badge/Express-FFFFFF?style=flat-square&logo=express&logoColor=000000&labelColor=FFFFFF)
+![Fastify](https://img.shields.io/badge/Fastify-FFFFFF?style=flat-square&logo=fastify&logoColor=000000&labelColor=FFFFFF)
+![Kotlin](https://img.shields.io/badge/Kotlin-FFFFFF?style=flat-square&logo=kotlin&logoColor=7F52FF&labelColor=FFFFFF)
+![Java](https://img.shields.io/badge/Java-FFFFFF?style=flat-square&logo=openjdk&logoColor=ED8B00&labelColor=FFFFFF)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-FFFFFF?style=flat-square&logo=springboot&logoColor=6DB33F&labelColor=FFFFFF)
+![Python](https://img.shields.io/badge/Python-FFFFFF?style=flat-square&logo=python&logoColor=3776AB&labelColor=FFFFFF)
+![FastAPI](https://img.shields.io/badge/FastAPI-FFFFFF?style=flat-square&logo=fastapi&logoColor=009688&labelColor=FFFFFF)
 
----
+**Database & Infra**
 
-## 🌈 **Activity Graph**
+![MySQL](https://img.shields.io/badge/MySQL-FFFFFF?style=flat-square&logo=mysql&logoColor=4479A1&labelColor=FFFFFF)
+![MongoDB](https://img.shields.io/badge/MongoDB-FFFFFF?style=flat-square&logo=mongodb&logoColor=47A248&labelColor=FFFFFF)
+![Docker](https://img.shields.io/badge/Docker-FFFFFF?style=flat-square&logo=docker&logoColor=2496ED&labelColor=FFFFFF)
+![Nginx](https://img.shields.io/badge/Nginx-FFFFFF?style=flat-square&logo=nginx&logoColor=009639&labelColor=FFFFFF)
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=cher1shRXD&theme=tokyo-night&hide_border=true&area=true" />
-</div>
+**Tools**
 
----
+![Figma](https://img.shields.io/badge/Figma-FFFFFF?style=flat-square&logo=figma&logoColor=F24E1E&labelColor=FFFFFF)
+![VS Code](https://img.shields.io/badge/VS_Code-FFFFFF?style=flat-square&logo=visualstudiocode&logoColor=007ACC&labelColor=FFFFFF)
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-FFFFFF?style=flat-square&logo=intellijidea&logoColor=000000&labelColor=FFFFFF)
+![Git](https://img.shields.io/badge/Git-FFFFFF?style=flat-square&logo=git&logoColor=F05032&labelColor=FFFFFF)
+![GitHub](https://img.shields.io/badge/GitHub-FFFFFF?style=flat-square&logo=github&logoColor=181717&labelColor=FFFFFF)
 
-## 🎯 **Current Focus**
+<br/>
 
-```typescript
-const cher1shRXD = {
-  code: ["JavaScript", "TypeScript", "Python", "Java", "PHP"],
-  askMeAbout: ["web dev", "tech", "app dev", "database design"],
-  technologies: {
-    frontEnd: {
-      js: ["React", "Next.js", "jQuery"],
-      css: ["Tailwind", "Bootstrap", "Styled Components"]
-    },
-    backEnd: {
-      js: ["Node.js", "Express", "NestJS"],
-      python: ["FastAPI"],
-      java: ["Spring Boot"],
-      php: ["Native PHP"]
-    },
-    databases: ["MySQL", "MongoDB", "Redis", "MariaDB"],
-    mobile: ["React Native", "Flutter", "Expo"]
-  },
-  architecture: ["Serverless", "Microservices", "SPA"],
-  currentFocus: "Building scalable web applications with modern tech stack",
-  funFact: "I debug with console.log and I'm not ashamed of it! 🤷‍♂️"
-};
-```
+## 활동
 
----
+<a href="https://github.com/cher1shRXD">
+  <img src="https://github-readme-stats.vercel.app/api?username=cher1shRXD&show_icons=true&hide_border=true&include_all_commits=true&bg_color=FFFFFF&title_color=3FC58C&icon_color=3FC58C&text_color=333333&ring_color=3FC58C" height="170" />
+</a>
+<a href="https://github.com/cher1shRXD">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cher1shRXD&layout=compact&hide_border=true&langs_count=8&bg_color=FFFFFF&title_color=3FC58C&text_color=333333" height="170" />
+</a>
 
-## 🤝 **Let's Connect!**
+<br/>
 
-<div align="center">
- <p>Mail: <a href="mailto:tw080401@naver.com">tw080401@naver.com</a></p>
-</div>
+<a href="https://github.com/cher1shRXD">
+  <img src="https://streak-stats.demolab.com/?user=cher1shRXD&hide_border=true&background=FFFFFF&stroke=3FC58C&ring=3FC58C&fire=3FC58C&currStreakLabel=3FC58C&sideNums=333333&currStreakNum=333333&dates=333333&sideLabels=333333" height="170" />
+</a>
 
----
+<br/>
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" />
-</div>
+## 연락처
 
-<div align="center">
-  <b>✨ Thanks for visiting my profile! ✨</b>
-  <br>
-  <i>Happy coding! 🚀</i>
-</div>
+- **Portfolio** · [www.cher1shrxd.me](https://www.cher1shrxd.me)
+- **Email** · cher1shrxd@naver.com
+- **GitHub** · [@cher1shRXD](https://github.com/cher1shRXD)
