@@ -20,7 +20,7 @@ const TechStacks = ({ data }: Props) => {
     {} as Record<string, TechStack[]>,
   );
 
-  const categories = ["Frontend", "Tools", "Backend", "Database"];
+  const categories = ["Frontend", "Backend", "Tools", "Database"];
   const { wrapperRef, activeIndex } = useActiveByScroll(categories);
 
   return (
