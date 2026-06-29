@@ -4,13 +4,13 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const TICKER_ITEMS = [
   "FRONTEND",
-  "PRODUCT",
-  "SYSTEMS",
-  "INTERACTION",
+  "PROBLEM FIRST",
+  "CLEAR INTERFACES",
+  "MAINTAINABLE CODE",
   "NEXT.JS",
   "TYPESCRIPT",
-  "SCROLL",
-  "PORTFOLIO",
+  "USER FLOWS",
+  "STEADY DELIVERY",
 ];
 
 const KineticScrollStage = () => {

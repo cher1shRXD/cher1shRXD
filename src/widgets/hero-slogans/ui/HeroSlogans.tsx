@@ -5,14 +5,14 @@ const HeroSlogans = () => {
   return (
     <section className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-440 flex-col justify-between overflow-hidden px-4 py-8 sm:px-6 md:px-8 lg:px-10 xl:px-4">
       <div className="absolute right-4 top-6 hidden rotate-2 border-2 border-border bg-primary px-4 py-2 text-sm font-black text-white shadow-[5px_5px_0_var(--theme-color-ink)] md:block">
-        SCROLL RESPONSIVE PORTFOLIO
+        PROBLEM FIRST FRONTEND
       </div>
       <Reveal triggerOnce threshold={0.2}>
         <p className="section-label mb-6 text-xs font-black sm:text-sm">
           KIM TAEWOO / CHER1SHRXD
         </p>
         <h1 className="section-title max-w-[12ch] text-[clamp(3.7rem,15vw,12rem)]">
-          FRONTEND THAT MOVES.
+          CLEAR FRONTEND, STEADY CODE.
         </h1>
       </Reveal>
 

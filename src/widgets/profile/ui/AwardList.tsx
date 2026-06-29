@@ -8,7 +8,7 @@ interface Props {
 
 const AwardList = ({ awards }: Props) => {
   return (
-    <Reveal>
+    <Reveal threshold={0.15} triggerOnce>
       <div className="w-full flex flex-col items-start gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8">
         <h3 className="section-label text-lg sm:text-xl lg:text-2xl font-black">수상경력</h3>
         <div className="w-full sm:w-auto grid grid-cols-2 gap-1.5 sm:gap-2">

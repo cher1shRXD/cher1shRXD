@@ -31,7 +31,7 @@ const ProfileSection = ({
         </h1>
       </Reveal>
       <div className="w-full flex flex-col md:flex-row items-center justify-start gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8">
-        <Reveal delay={0.3} triggerOnce>
+        <Reveal delay={0.2} threshold={0.2} triggerOnce>
           <Image
             src="/profile.JPG"
             alt="증명사진"
@@ -41,7 +41,7 @@ const ProfileSection = ({
           />
         </Reveal>
         <div className="flex flex-col gap-2 sm:gap-2.5 md:gap-3 lg:gap-3.5 xl:gap-4 w-full md:w-auto">
-          <Reveal delay={0.6} triggerOnce>
+          <Reveal delay={0.35} threshold={0.2} triggerOnce>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-black text-center md:text-left">
               {personalInfo.name}
               <span className="kinetic-word ml-3 text-sm sm:text-base md:text-lg xl:text-xl font-playpen">
@@ -49,7 +49,7 @@ const ProfileSection = ({
               </span>
             </h2>
           </Reveal>
-          <Reveal delay={0.9} triggerOnce>
+          <Reveal delay={0.5} threshold={0.2} triggerOnce>
             <ProfileTable personalInfo={personalInfo} />
           </Reveal>
         </div>

@@ -86,7 +86,9 @@ export default async function HomePage() {
       />
       <section className="w-full max-w-440 mx-auto px-4 flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 md:mb-64 mb-16">
         <Reveal>
-          <p className="section-label mb-4 text-xs font-black">SCROLL TO FILL</p>
+          <p className="section-label mb-4 text-xs font-black">
+            TOOLS I TRUST
+          </p>
           <h1 className="section-title text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
             TECH STACKS.
           </h1>
