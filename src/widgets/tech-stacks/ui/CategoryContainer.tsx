@@ -18,14 +18,15 @@ const CategoryContainer = ({ isActive, name, items }: Props) => {
     <motion.div
       initial={{ opacity: 0.3 }}
       animate={{
-        opacity: isActive ? 1 : 0.3,
-        scale: isActive ? 1 : 0.95,
+        opacity: isActive ? 1 : 0.62,
+        scale: isActive ? 1 : 0.97,
+        rotate: isActive ? 0 : -1.5,
       }}
       transition={{ duration: 0.5 }}
-      className={`flex-1 w-full sm:w-auto min-w-50 sm:min-w-55 md:min-w-0 rounded-2xl sm:rounded-3xl md:rounded-3xl lg:rounded-4xl xl:rounded-4xl p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-5 xl:gap-6 transition-colors duration-500 ${
-        isActive ? "bg-primary/20 border border-primary sm:border-2" : "bg-surface border border-border sm:border-2"
+      className={`hard-panel flex-1 w-full sm:w-auto min-w-50 sm:min-w-55 md:min-w-0 p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-5 xl:gap-6 transition-colors duration-500 ${
+        isActive ? "bg-primary text-white" : "bg-surface text-text"
       }`}>
-      <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold font-playpen tracking-wider text-primary">
+      <h3 className={`text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-black font-playpen leading-none ${isActive ? "text-lime" : "text-primary"}`}>
         {name}
       </h3>
       
@@ -42,8 +43,8 @@ const CategoryContainer = ({ isActive, name, items }: Props) => {
               duration: 0.3,
               delay: isMobile ? 0 : (isActive ? index * 0.05 : 0),
             }}
-            className={`flex items-center justify-between p-2 sm:p-3 md:p-3 lg:p-4 xl:p-4 rounded-lg sm:rounded-xl md:rounded-xl transition-colors ${
-              isActive ? "bg-surface/80" : "bg-surface/40"
+            className={`flex items-center justify-between p-2 sm:p-3 md:p-3 lg:p-4 xl:p-4 border-2 border-border transition-colors ${
+              isActive ? "bg-surface text-text" : "bg-background/70"
             }`}>
             <span className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium">
               {item.name.title[0].plain_text}
@@ -55,7 +56,7 @@ const CategoryContainer = ({ isActive, name, items }: Props) => {
                   key={i}
                   className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2 md:h-2 rounded-full ${
                     i < getLevelCount(item.level.status.name)
-                      ? "bg-primary"
+                      ? "bg-primary border border-border"
                       : "bg-border"
                   }`}
                 />

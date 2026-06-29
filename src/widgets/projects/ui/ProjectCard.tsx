@@ -28,18 +28,18 @@ const ProjectCard = ({ project, projectId }: Props) => {
   return (
     <div
       onClick={handleCardClick}
-      className="group relative bg-surface rounded-lg sm:rounded-xl md:rounded-xl overflow-hidden transition-all duration-300 cursor-pointer">
+      className="group hard-panel relative bg-surface overflow-hidden transition-all duration-300 cursor-pointer hover:-translate-y-2 hover:-rotate-1">
       <div className="p-4 flex flex-col gap-3 sm:gap-4 md:gap-5">
         <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
           <span
-            className={`text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 rounded-full ${project.is_deployed.status.name === "Deployed" ? "bg-green-500/20 text-green-500" : "bg-red-500/20 text-red-500"} font-medium`}>
+            className={`text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 border-2 border-border ${project.is_deployed.status.name === "Deployed" ? "bg-lime text-ink" : "bg-primary text-white"} font-black`}>
             {project.is_deployed.status.name}
           </span>
         </div>
 
         <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold flex items-center gap-2.5">
           {image && (
-            <span className="relative shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-md overflow-hidden bg-surface/50">
+            <span className="relative shrink-0 w-7 h-7 sm:w-8 sm:h-8 overflow-hidden border-2 border-border bg-background">
               <Image
                 src={image}
                 alt={project.name.title[0].plain_text}
@@ -71,7 +71,7 @@ const ProjectCard = ({ project, projectId }: Props) => {
           {project.tech_stacks.multi_select.map((tech) => (
             <span
               key={tech.id}
-              className="text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 rounded-md bg-surface/80 border border-border text-text">
+              className="text-xs sm:text-sm md:text-sm px-2 py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 bg-background border-2 border-border text-text font-semibold">
               {tech.name}
             </span>
           ))}
@@ -100,7 +100,7 @@ const ProjectCard = ({ project, projectId }: Props) => {
           )}
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-0.5 sm:h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+        <div className="absolute bottom-0 left-0 w-full h-2 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
       </div>
     </div>
   );

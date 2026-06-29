@@ -10,12 +10,12 @@ const AwardList = ({ awards }: Props) => {
   return (
     <Reveal>
       <div className="w-full flex flex-col items-start gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8">
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold">수상경력</h3>
+        <h3 className="section-label text-lg sm:text-xl lg:text-2xl font-black">수상경력</h3>
         <div className="w-full sm:w-auto grid grid-cols-2 gap-1.5 sm:gap-2">
           {awards.map((award, index) => (
             <div
               key={index}
-              className="bg-surface rounded-sm p-3 px-4 sm:px-5 md:p-4 md:px-6 lg:px-7 xl:px-8 flex flex-col gap-0.5 md:gap-1">
+              className="hard-panel bg-surface p-3 px-4 sm:px-5 md:p-4 md:px-6 lg:px-7 xl:px-8 flex flex-col gap-0.5 md:gap-1 transition-transform hover:-rotate-1">
               <div className="text-[10px] sm:text-xs text-text/50 font-semibold">
                 {award.award_category.select.name || ""} ·{" "}
                 <span className="text-yellow-600">

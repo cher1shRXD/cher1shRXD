@@ -27,15 +27,15 @@ const BlogCard = ({ post }: Props) => {
   return (
     <article
       onClick={handleClick}
-      className="group cursor-pointer bg-surface rounded-lg overflow-hidden hover:-translate-y-2 transition-all duration-300 flex flex-col h-full shadow-sm hover:shadow-lg">
+      className="group hard-panel cursor-pointer bg-surface overflow-hidden hover:-translate-y-2 hover:rotate-1 transition-all duration-300 flex flex-col h-full">
       {properties.thumbnail && image && (
-        <div className="relative w-full aspect-video overflow-hidden bg-surface">
+        <div className="relative w-full aspect-video overflow-hidden border-b-2 border-border bg-surface">
           <Image
             src={image}
             alt={properties.name.title[0]?.plain_text || "Blog post"}
             fill
             unoptimized
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
           />
         </div>
       )}
@@ -50,14 +50,14 @@ const BlogCard = ({ post }: Props) => {
             {properties.tags.multi_select.slice(0, 3).map((tag) => (
               <span
                 key={tag.id}
-                className="px-2.5 py-1 text-xs font-medium bg-primary/10 text-primary rounded">
+                className="border border-border px-2.5 py-1 text-xs font-black bg-lime text-ink">
                 {tag.name}
               </span>
             ))}
           </div>
         )}
 
-        <div className="mt-auto pt-3 border-t border-border flex items-center justify-between flex-wrap gap-2">
+        <div className="mt-auto pt-3 border-t-2 border-border flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-1.5 text-xs text-text/60">
             <Calendar className="w-3.5 h-3.5" />
             <time>{formatDate(properties.created_at.created_time)}</time>

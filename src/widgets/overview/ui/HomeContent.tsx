@@ -19,12 +19,13 @@ const HomeContent = ({ blogs, projects }: Props) => {
       <section className="w-full max-w-440 mx-auto px-4 flex flex-col gap-8 mb-16 md:mb-32">
         <Reveal triggerOnce>
           <div className="flex flex-col items-start gap-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold font-playpen tracking-widest">
+            <p className="section-label text-xs font-black">LATEST WRITING</p>
+            <h1 className="section-title text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
               RECENT BLOG.
             </h1>
             <Link
               href="/blog"
-              className="text-sm sm:text-base text-primary whitespace-nowrap text-nowrap self-end hover:underline">
+              className="hard-panel bg-background px-4 py-2 text-sm sm:text-base text-primary font-black whitespace-nowrap text-nowrap self-end hover:bg-lime hover:text-ink transition-colors">
               View All →
             </Link>
           </div>
@@ -39,12 +40,13 @@ const HomeContent = ({ blogs, projects }: Props) => {
       <section className="w-full max-w-440 mx-auto px-4 flex flex-col gap-8 mb-16 md:mb-32">
         <Reveal triggerOnce>
           <div className="flex flex-col items-start gap-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold font-playpen tracking-widest">
+            <p className="section-label text-xs font-black">SHIPPED THINGS</p>
+            <h1 className="section-title text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
               RECENT PROJECTS.
             </h1>
             <Link
               href="/projects"
-              className="text-sm sm:text-base text-primary whitespace-nowrap text-nowrap self-end hover:underline">
+              className="hard-panel bg-background px-4 py-2 text-sm sm:text-base text-primary font-black whitespace-nowrap text-nowrap self-end hover:bg-lime hover:text-ink transition-colors">
               View All →
             </Link>
           </div>

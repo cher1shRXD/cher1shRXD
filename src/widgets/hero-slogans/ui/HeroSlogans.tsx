@@ -1,40 +1,50 @@
 import Reveal from "@/shared/ui/Reveal";
 import { SLOGANS } from "../constants";
-import Cursor from "@/shared/icons/Cursor";
 
 const HeroSlogans = () => {
   return (
-    <section className="w-full max-w-440 lg:py-32 md:py-16 py-8 mx-auto px-4 flex flex-col lg:gap-18 md:gap-12 sm:gap-8 gap-6">
-      {SLOGANS.map((slogan) => (
-        <Reveal
-          className={slogan.className}
-          delay={slogan.delay}
-          key={slogan.key}
-          triggerOnce>
-          <h1 className="lg:text-7xl md:text-5xl sm:text-3xl text-2xl relative hover:[&>div]:opacity-100">
-            {slogan.emoji && !slogan.emojiPosition && (
-              <span className="animate-bounce inline-block">
-                {slogan.emoji}
-              </span>
-            )}{" "}
-            <span className="font-medium font-playpen">{slogan.title}</span>{" "}
-            {slogan.emoji && slogan.emojiPosition === "end" && (
-              <span className="animate-bounce inline-block animation-delay-300">
-                {slogan.emoji}
-              </span>
-            )}
-            {slogan.pointer && (
-              <span className="absolute top-[90%] right-10 -rotate-25 text-4xl animate-bounce animation-delay-500 hidden xl:block">
-                <Cursor />
-              </span>
-            )}
-            <div
-              className={`absolute -bottom-12 ${slogan.tooltipPosition} opacity-0 transition-opacity duration-500 bg-primary text-white px-8 py-2 rounded-md`}>
-              <p className="text-lg">{slogan.description}</p>
-            </div>
-          </h1>
+    <section className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-440 flex-col justify-between overflow-hidden px-4 py-8 sm:px-6 md:px-8 lg:px-10 xl:px-4">
+      <div className="absolute right-4 top-6 hidden rotate-2 border-2 border-border bg-primary px-4 py-2 text-sm font-black text-white shadow-[5px_5px_0_var(--theme-color-ink)] md:block">
+        SCROLL RESPONSIVE PORTFOLIO
+      </div>
+      <Reveal triggerOnce threshold={0.2}>
+        <p className="section-label mb-6 text-xs font-black sm:text-sm">
+          KIM TAEWOO / CHER1SHRXD
+        </p>
+        <h1 className="section-title max-w-[12ch] text-[clamp(3.7rem,15vw,12rem)]">
+          FRONTEND THAT MOVES.
+        </h1>
+      </Reveal>
+
+      <div className="grid gap-4 pb-4 md:grid-cols-[1fr_1.45fr] md:items-end">
+        <Reveal delay={0.2} triggerOnce threshold={0.2}>
+          <div className="hard-panel bg-surface p-4 text-sm font-semibold leading-7 sm:p-6 sm:text-base">
+            다음 사람이 망설이지 않는 코드를 쓰는 프론트엔드 개발자.
+            문제를 구조화하고, 인터페이스를 움직이게 만들고, 오래 버티는
+            화면을 설계합니다.
+          </div>
         </Reveal>
-      ))}
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {SLOGANS.map((slogan) => (
+            <Reveal
+              className={slogan.className}
+              delay={slogan.delay}
+              key={slogan.key}
+              triggerOnce
+              threshold={0.2}>
+              <article className="group hard-panel min-h-32 bg-background p-4 transition-transform duration-300 hover:-translate-y-1 hover:rotate-1 hover:bg-lime sm:p-5">
+                <p className="mb-4 font-playpen text-xl font-extrabold leading-none sm:text-2xl">
+                  {slogan.title}
+                </p>
+                <p className="text-sm font-medium leading-6 text-text/75">
+                  {slogan.description}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

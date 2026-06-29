@@ -2,7 +2,7 @@ import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 
 export const useActiveByScroll = (categories: string[]) => {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -17,12 +17,15 @@ export const useActiveByScroll = (categories: string[]) => {
   );
 
   useMotionValueEvent(progress, "change", (latest) => {
-    const newIndex = Math.round(latest);
+    const newIndex = Math.min(
+      categories.length - 1,
+      Math.max(0, Math.round(latest)),
+    );
     setActiveIndex(newIndex);
   });
 
   return {
     wrapperRef,
     activeIndex,
-  }
+  };
 };

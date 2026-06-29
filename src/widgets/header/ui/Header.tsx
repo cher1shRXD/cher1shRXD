@@ -15,7 +15,7 @@ import Logo from "@/shared/icons/Logo";
 
 const Header = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const { isVisible, isTop } = useScroll();
+  const { isVisible } = useScroll();
 
   useEffect(() => {
     if (isMenuOpened) {
@@ -35,15 +35,15 @@ const Header = () => {
     <div
       className={`w-full fixed top-0 z-50 ${isMenuOpened ? "backdrop-blur-lg" : "backdrop-blur-none"} transition-all duration-300`}>
       <header
-        className={`w-full ${isMenuOpened ? "bg-primary/80" : "bg-background"} flex flex-col items-center justify-start ${shouldShow ? "translate-y-0" : "-translate-y-full"} transition-transform duration-700`}>
+        className={`w-full ${isMenuOpened ? "bg-primary/90" : "bg-background/90"} flex flex-col items-center justify-start ${shouldShow ? "translate-y-0" : "-translate-y-full"} transition-transform duration-700 border-b-2 border-border`}>
         <div
-          className={`${isTop || isMenuOpened ? "border-0" : "border-b border-border"} w-full max-w-440 h-20 flex items-center justify-start px-2 gap-4`}>
+          className="w-full max-w-440 h-20 flex items-center justify-start px-2 gap-4">
           <Hamburger
             isMenuOpened={isMenuOpened}
             setIsMenuOpened={setIsMenuOpened}
           />
           <Link href="/">
-            <Logo size={48} className="text-text cursor-pointer" />
+            <Logo size={48} className="text-text cursor-pointer transition-transform hover:rotate-6" />
           </Link>
           <div className="flex-1" />
           <A href="https://velog.io/@rxd123/posts" target="_blank">

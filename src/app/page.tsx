@@ -15,6 +15,7 @@ import OverviewSection from "@/widgets/overview/ui/OverviewSection";
 import HomeContent from "@/widgets/overview/ui/HomeContent";
 import Script from "next/script";
 import { Metadata } from "next";
+import KineticScrollStage from "@/widgets/kinetic-scroll/ui/KineticScrollStage";
 
 export const revalidate = 31536000;
 
@@ -66,6 +67,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <KineticScrollStage />
       <Script
         id="json-ld"
         type="application/ld+json"
@@ -84,7 +86,8 @@ export default async function HomePage() {
       />
       <section className="w-full max-w-440 mx-auto px-4 flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 md:mb-64 mb-16">
         <Reveal>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold font-playpen tracking-widest">
+          <p className="section-label mb-4 text-xs font-black">SCROLL TO FILL</p>
+          <h1 className="section-title text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
             TECH STACKS.
           </h1>
         </Reveal>

@@ -6,11 +6,12 @@ const OverviewSection = () => {
   return (
     <Reveal threshold={0.3}>
       <section className="w-full max-w-440 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-4 flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 mb-16 sm:mb-20 md:mb-24 lg:mb-28 xl:mb-32">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold font-playpen tracking-widest">
+        <p className="section-label text-xs font-black">MAP / NEXT ROUTES</p>
+        <h1 className="section-title text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
           OVERVIEW.
         </h1>
         <div className="w-full max-w-440 mx-auto px-0 sm:px-2 md:px-4 flex flex-col text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
-          <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl whitespace-pre-wrap leading-[160%] italic border-y border-border py-6 sm:py-7 md:py-8 lg:py-9 xl:py-10 mx-2 sm:mx-4 md:mx-6 lg:mx-7 xl:mx-8">
+          <p className="hard-panel bg-surface text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl whitespace-pre-wrap leading-[160%] font-semibold py-6 sm:py-7 md:py-8 lg:py-9 xl:py-10 px-6 mx-2 sm:mx-4 md:mx-6 lg:mx-7 xl:mx-8">
             {OVERVIEW_DESCRIPTION}
           </p>
         </div>
